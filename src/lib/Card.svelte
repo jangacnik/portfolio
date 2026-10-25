@@ -51,6 +51,7 @@
     position: relative;
     width: 100%;
     aspect-ratio: 63 / 88;
+    container-type: inline-size;
     padding: 0.5rem 0.5rem 1.15rem;
     border-radius: 1rem;
     background: #151110;
@@ -145,7 +146,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    font-size: 0.95rem;
+    font-size: clamp(0.8rem, 5.6cqw, 1.05rem);
     font-weight: 600;
     line-height: 1.2;
   }
@@ -226,7 +227,7 @@
     border-radius: 0.2rem;
     background: var(--paper);
     box-shadow: 0 0 0 1px var(--frame-dark);
-    font-size: 0.8rem;
+    font-size: clamp(0.66rem, 4.7cqw, 0.9rem);
     line-height: 1.35;
   }
   .date {

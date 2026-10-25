@@ -114,16 +114,16 @@
 
 <style>
   .stack {
-    --w: min(17rem, 78vw);
+    --w: min(17rem, calc(100vw - 3rem));
   }
   .track {
     position: relative;
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding: 2.5rem 1.5rem 1.5rem;
-    margin: -2.5rem -1.5rem -0.5rem;
-    scroll-padding-inline: 1.5rem;
+    padding: 2.5rem 1.25rem 1.5rem;
+    margin: -2.5rem -1.25rem -0.5rem;
+    scroll-padding-inline: 1.25rem;
     scrollbar-width: none;
     cursor: grab;
     user-select: none;

@@ -40,7 +40,7 @@
         {#key hero.name}
           <p class="eyebrow" in:fade={{ duration: 800 }}>{hero.location}</p>
           <h1 in:fly={{ y: 40, duration: 900, easing: cubicOut }}>{hero.name}</h1>
-          <p class="role" in:fly={{ y: 30, duration: 900, delay: 150, easing: cubicOut }}>{hero.role} · {age}</p>
+          <p class="role" in:fly={{ y: 30, duration: 900, delay: 150, easing: cubicOut }}>{hero.role} ·&nbsp;{age}</p>
           <p class="tagline" in:fly={{ y: 20, duration: 900, delay: 300, easing: cubicOut }}>{hero.tagline}</p>
           <p class="summary" in:fade={{ duration: 900, delay: 500 }}>{hero.summary}</p>
           <ul class="facts" in:fade={{ duration: 900, delay: 650 }}>
@@ -144,7 +144,7 @@
     margin-top: 0.5rem;
   }
   .role {
-    font-size: 1.25rem;
+    font-size: clamp(0.95rem, 4.6vw, 1.25rem);
     color: var(--accent);
     margin-top: 0.5rem;
   }
@@ -377,7 +377,9 @@
       grid-template-columns: 1fr;
     }
     .portrait {
-      max-width: 260px;
+      order: -1;
+      width: min(300px, 100%);
+      margin-inline: auto;
     }
   }
   @media (prefers-reduced-motion: reduce) {

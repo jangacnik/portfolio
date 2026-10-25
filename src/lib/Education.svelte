@@ -41,7 +41,8 @@
     align-items: start;
   }
   .pile {
-    --width: min(21rem, 78vw);
+    --shift: min(3rem, 6vw);
+    --width: min(21rem, calc(100vw - 2.5rem - var(--shift)));
     --height: calc(var(--width) * 88 / 63);
     display: flex;
     flex-direction: column;
@@ -57,7 +58,7 @@
   }
   .slot + .slot {
     margin-top: calc(var(--height) / -2);
-    margin-left: 3rem;
+    margin-left: var(--shift);
   }
   .slot:hover {
     z-index: 100;

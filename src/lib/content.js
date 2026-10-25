@@ -1,0 +1,320 @@
+export const languages = [
+  { code: 'en', label: 'EN' },
+  { code: 'sl', label: 'SL' },
+  { code: 'de', label: 'DE' },
+  { code: 'ja', label: '日本語' },
+];
+
+const experienceTech = {
+  rakuten: ['Kotlin', 'Scala', 'ZIO', 'Vue.js', 'Cassandra', 'MySQL', 'Kafka', 'Kubernetes', 'Kibana', 'GCP', 'Claude Code'],
+  flawless: ['Java', 'Spring Boot', 'Angular', 'PostgreSQL', 'Jenkins', 'RabbitMQ', 'Kibana'],
+};
+
+const skillItems = {
+  languages: ['Kotlin', 'Scala (ZIO)', 'Java', 'TypeScript', 'Python'],
+  backend: ['Spring Boot', 'REST APIs', 'Maven', 'Gradle', 'JUnit 5', 'Activiti / BPMN'],
+  data: ['Cassandra', 'MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'Kafka'],
+  infra: ['Kubernetes', 'Docker', 'GCP', 'Jenkins', 'Kibana'],
+  frontend: ['Vue.js', 'Angular', 'Ionic'],
+  ai: ['Claude Code agents', 'Hooks', 'Skills', 'Multi-agent workflows'],
+};
+
+export const content = {
+  en: {
+    ui: { experience: 'Experience', skills: 'Skills', education: 'Education', languages: 'Languages', contact: 'Contact', scroll: 'Scroll to draw', present: 'Present', lead: 'Tech Lead', email: 'Email' },
+    hero: {
+      name: 'Jan Alojz Gačnik',
+      role: 'Backend Software Engineer',
+      location: 'Chiba, Japan',
+      tagline: 'Distributed systems that stay fast, consistent and online.',
+      summary:
+        'Backend engineer with 5+ years in fintech and large-scale consumer platforms. Building a globally distributed backend at Rakuten and leading a small team. Strong in Kotlin, Scala and Java, with deep experience in data consistency, concurrency and microservice architecture. Early adopter of AI-assisted development with Claude Code agents and multi-agent workflows.',
+      stats: [
+        { value: 5, suffix: '+', label: 'Years in fintech & scale' },
+        { value: 50, suffix: '%', label: 'Faster PR turnaround' },
+        { value: 25, suffix: '%', label: 'Higher approval throughput' },
+        { value: 0, suffix: '', label: 'Downtime in prod data ops' },
+      ],
+    },
+    experience: [
+      {
+        company: 'Rakuten',
+        role: 'Application Engineer',
+        period: 'Aug 2025 – Present',
+        place: 'Tokyo, Japan',
+        rarity: 'legendary',
+        blurb: 'Core backend of a globally distributed platform with high-throughput, low-latency requirements.',
+        points: [
+          'Took on tech-lead responsibilities within the first year in a 3-engineer Agile team: planning, design decisions, and main contact for clients, QA and DevOps.',
+          'Built backend services for high-throughput user data operations in Kotlin and Scala, focused on reliability and low latency.',
+          'Proposed new projects to architecture leadership, owned the design and drove adoption across teams.',
+          'Introduced Claude Code agents, hooks and multi-agent workflows to the team, cutting PR turnaround by up to 50%.',
+          'Solved data consistency and concurrency challenges in a globally distributed platform.',
+          'Planned and executed large-scale production data operations under tight deadlines with zero downtime and no data loss.',
+          'Contributed to a major backend migration to a functional Scala (ZIO) architecture.',
+        ],
+        tech: experienceTech.rakuten,
+      },
+      {
+        company: 'Flawless Code',
+        role: 'Full-stack Software Engineer',
+        period: 'Feb 2021 – Aug 2025',
+        place: 'Maribor, Slovenia (Remote)',
+        rarity: 'epic',
+        blurb: 'Credit processing platform for the European financial sector, handling high volumes of requests and documents.',
+        points: [
+          'Developed Spring Boot microservices for automated credit workflows in an 8-person Agile team.',
+          'Designed and optimized BPMN / Activiti business processes with business analysts.',
+          'Raised credit approval throughput by 25% through parallel processing and automation, reducing manual review.',
+          'Contributed to an OCR document pipeline with 90%+ accuracy and data normalization that improved automated validation.',
+          'Cut Angular latency by ~500 ms and API calls by 30%.',
+          'Mentored and onboarded 2 junior developers in Java, Spring Boot and BPM.',
+        ],
+        tech: experienceTech.flawless,
+      },
+    ],
+    skills: [
+      { type: 'Languages', glyph: '⚡', items: skillItems.languages },
+      { type: 'Backend', glyph: '🔥', items: skillItems.backend },
+      { type: 'Data & Messaging', glyph: '💧', items: skillItems.data },
+      { type: 'Infra & DevOps', glyph: '🌿', items: skillItems.infra },
+      { type: 'Frontend', glyph: '✨', items: skillItems.frontend },
+      { type: 'AI-assisted dev', glyph: '🔮', items: skillItems.ai },
+    ],
+    education: [
+      { school: 'University of Maribor', faculty: 'Faculty of Electrical Engineering and Computer Science', degree: "Master's, Computer and Information Technologies", period: 'Oct 2022 – Mar 2025', thesis: 'Business process automation using the Camunda platform' },
+      { school: 'University of Maribor', faculty: 'Faculty of Electrical Engineering and Computer Science', degree: "Bachelor's, Computer and Information Technologies", period: 'Oct 2018 – Sep 2022', thesis: 'Contactless work-hour monitoring system using Raspberry Pi' },
+    ],
+    spoken: [
+      { name: 'Slovenian', level: 'Native', pct: 100 },
+      { name: 'English', level: 'Business, B2 certified', pct: 80 },
+      { name: 'German', level: 'Advanced, B2 certified', pct: 75 },
+      { name: 'Japanese', level: 'Basic, studying', pct: 30 },
+    ],
+    contact: { heading: 'Let’s build something', note: 'Based in Japan · Spouse of Japanese national · No sponsorship required' },
+  },
+
+  sl: {
+    ui: { experience: 'Izkušnje', skills: 'Znanja', education: 'Izobrazba', languages: 'Jeziki', contact: 'Kontakt', scroll: 'Povleci za naprej', present: 'Danes', lead: 'Tehnični vodja', email: 'E-pošta' },
+    hero: {
+      name: 'Jan Alojz Gačnik',
+      role: 'Backend programski inženir',
+      location: 'Chiba, Japonska',
+      tagline: 'Porazdeljeni sistemi, ki ostanejo hitri, konsistentni in dostopni.',
+      summary:
+        'Backend inženir z več kot 5 leti izkušenj v fintechu in velikih potrošniških platformah. V Rakutnu razvijam globalno porazdeljen backend in vodim manjšo ekipo. Močan v Kotlinu, Scali in Javi, z globokim znanjem o konsistentnosti podatkov, sočasnosti in mikrostoritveni arhitekturi. Zgodnji uporabnik razvoja z umetno inteligenco: agenti Claude Code in večagentni delovni tokovi.',
+      stats: [
+        { value: 5, suffix: '+', label: 'let v fintechu in na veliki skali' },
+        { value: 50, suffix: '%', label: 'hitrejši pregled PR-jev' },
+        { value: 25, suffix: '%', label: 'višja prepustnost odobritev' },
+        { value: 0, suffix: '', label: 'izpada pri produkcijskih operacijah' },
+      ],
+    },
+    experience: [
+      {
+        company: 'Rakuten',
+        role: 'Application Engineer',
+        period: 'avg. 2025 – danes',
+        place: 'Tokio, Japonska',
+        rarity: 'legendary',
+        blurb: 'Jedro backenda globalno porazdeljene platforme z visoko prepustnostjo in nizko latenco.',
+        points: [
+          'V prvem letu prevzel vlogo tehničnega vodje v agilni ekipi treh inženirjev: načrtovanje, tehnične odločitve ter glavni stik za naročnike, QA in DevOps.',
+          'Razvoj backend storitev za visokozmogljive operacije nad uporabniškimi podatki v Kotlinu in Scali, s poudarkom na zanesljivosti in nizki latenci.',
+          'Predlagal nove projekte vodstvu arhitekture, prevzel načrtovanje arhitekture in vodil uvedbo med ekipami.',
+          'V ekipo uvedel agente, kavlje in večagentne delovne tokove Claude Code ter skrajšal čas pregleda PR-jev do 50 %.',
+          'Rešil izzive konsistentnosti podatkov in sočasnosti v globalno porazdeljeni platformi.',
+          'Načrtoval in izvedel obsežne produkcijske operacije nad podatki v strogih rokih, brez izpada in brez izgube podatkov.',
+          'Sodeloval pri veliki migraciji backenda na funkcijsko arhitekturo v Scali (ZIO).',
+        ],
+        tech: experienceTech.rakuten,
+      },
+      {
+        company: 'Flawless Code',
+        role: 'Full-stack programski inženir',
+        period: 'feb. 2021 – avg. 2025',
+        place: 'Maribor, Slovenija (na daljavo)',
+        rarity: 'epic',
+        blurb: 'Platforma za obdelavo kreditov za evropski finančni sektor z velikim obsegom zahtevkov in dokumentov.',
+        points: [
+          'Razvoj Spring Boot mikrostoritev za avtomatizirane kreditne procese v agilni ekipi osmih ljudi.',
+          'Načrtovanje in optimizacija poslovnih procesov BPMN / Activiti skupaj s poslovnimi analitiki.',
+          'Povečal prepustnost odobritev kreditov za 25 % s sočasno obdelavo in avtomatizacijo ter zmanjšal ročni pregled.',
+          'Sodeloval pri sistemu za OCR obdelavo dokumentov z več kot 90 % natančnostjo in normalizaciji podatkov za boljšo samodejno validacijo.',
+          'Zmanjšal latenco Angular aplikacije za ~500 ms in število API klicev za 30 %.',
+          'Mentor in uvajalec dveh mlajših razvijalcev v Javi, Spring Bootu in BPM.',
+        ],
+        tech: experienceTech.flawless,
+      },
+    ],
+    skills: [
+      { type: 'Jeziki', glyph: '⚡', items: skillItems.languages },
+      { type: 'Backend', glyph: '🔥', items: skillItems.backend },
+      { type: 'Podatki in sporočanje', glyph: '💧', items: skillItems.data },
+      { type: 'Infrastruktura in DevOps', glyph: '🌿', items: skillItems.infra },
+      { type: 'Frontend', glyph: '✨', items: skillItems.frontend },
+      { type: 'Razvoj z UI', glyph: '🔮', items: skillItems.ai },
+    ],
+    education: [
+      { school: 'Univerza v Mariboru', faculty: 'Fakulteta za elektrotehniko, računalništvo in informatiko', degree: 'Magisterij, računalništvo in informacijske tehnologije', period: 'okt. 2022 – mar. 2025', thesis: 'Avtomatizacija poslovnih procesov s platformo Camunda' },
+      { school: 'Univerza v Mariboru', faculty: 'Fakulteta za elektrotehniko, računalništvo in informatiko', degree: 'Diploma, računalništvo in informacijske tehnologije', period: 'okt. 2018 – sep. 2022', thesis: 'Brezstični sistem za spremljanje delovnega časa z Raspberry Pi' },
+    ],
+    spoken: [
+      { name: 'Slovenščina', level: 'Materni jezik', pct: 100 },
+      { name: 'Angleščina', level: 'Poslovna, certifikat B2', pct: 80 },
+      { name: 'Nemščina', level: 'Napredna, certifikat B2', pct: 75 },
+      { name: 'Japonščina', level: 'Osnovna, v učenju', pct: 30 },
+    ],
+    contact: { heading: 'Ustvarimo nekaj skupaj', note: 'Živim na Japonskem · Viza: zakonec japonskega državljana · Sponzorstvo ni potrebno' },
+  },
+
+  de: {
+    ui: { experience: 'Erfahrung', skills: 'Fähigkeiten', education: 'Ausbildung', languages: 'Sprachen', contact: 'Kontakt', scroll: 'Scrollen zum Ziehen', present: 'Heute', lead: 'Tech Lead', email: 'E-Mail' },
+    hero: {
+      name: 'Jan Alojz Gačnik',
+      role: 'Backend Software Engineer',
+      location: 'Chiba, Japan',
+      tagline: 'Verteilte Systeme, die schnell, konsistent und verfügbar bleiben.',
+      summary:
+        'Backend-Entwickler mit über 5 Jahren Erfahrung in Fintech und großen Consumer-Plattformen. Bei Rakuten baue ich ein global verteiltes Backend und übernehme Tech-Lead-Aufgaben in einem kleinen Team. Stark in Kotlin, Scala und Java, mit fundierter Erfahrung in Datenkonsistenz, Nebenläufigkeit und Microservice-Architektur. Früher Anwender KI-gestützter Entwicklung mit Claude-Code-Agenten und Multi-Agent-Workflows.',
+      stats: [
+        { value: 5, suffix: '+', label: 'Jahre Fintech & Skalierung' },
+        { value: 50, suffix: '%', label: 'schnellere PR-Durchlaufzeit' },
+        { value: 25, suffix: '%', label: 'höherer Freigabedurchsatz' },
+        { value: 0, suffix: '', label: 'Ausfallzeit bei Produktiv-Datenoperationen' },
+      ],
+    },
+    experience: [
+      {
+        company: 'Rakuten',
+        role: 'Application Engineer',
+        period: 'Aug. 2025 – heute',
+        place: 'Tokio, Japan',
+        rarity: 'legendary',
+        blurb: 'Kern-Backend einer global verteilten Plattform mit hohem Durchsatz und niedriger Latenz.',
+        points: [
+          'Im ersten Jahr Tech-Lead-Aufgaben in einem agilen Team mit drei Entwicklern übernommen: Planung, Designentscheidungen und Hauptansprechpartner für Kunden, QA und DevOps.',
+          'Backend-Services für hochperformante Nutzerdaten-Operationen in Kotlin und Scala entwickelt, mit Fokus auf Zuverlässigkeit und niedrige Latenz.',
+          'Neue Projekte der Architekturleitung vorgeschlagen, das Design verantwortet und die teamübergreifende Einführung vorangetrieben.',
+          'Claude-Code-Agenten, Hooks und Multi-Agent-Workflows im Team eingeführt und die PR-Durchlaufzeit um bis zu 50 % gesenkt.',
+          'Herausforderungen bei Datenkonsistenz und Nebenläufigkeit in einer global verteilten Plattform gelöst.',
+          'Umfangreiche Produktiv-Datenoperationen unter engen Fristen geplant und ohne Ausfall und ohne Datenverlust durchgeführt.',
+          'Beitrag zur großen Backend-Migration auf eine funktionale Scala-(ZIO)-Architektur.',
+        ],
+        tech: experienceTech.rakuten,
+      },
+      {
+        company: 'Flawless Code',
+        role: 'Full-Stack Software Engineer',
+        period: 'Feb. 2021 – Aug. 2025',
+        place: 'Maribor, Slowenien (Remote)',
+        rarity: 'epic',
+        blurb: 'Kreditverarbeitungsplattform für den europäischen Finanzsektor mit hohem Aufkommen an Anträgen und Dokumenten.',
+        points: [
+          'Spring-Boot-Microservices für automatisierte Kredit-Workflows in einem agilen 8-Personen-Team entwickelt.',
+          'BPMN-/Activiti-Geschäftsprozesse gemeinsam mit Business-Analysten entworfen und optimiert.',
+          'Kreditfreigabe-Durchsatz um 25 % gesteigert durch Parallelverarbeitung und Automatisierung, weniger manuelle Prüfung.',
+          'Beitrag zu einem OCR-Dokumentensystem mit über 90 % Genauigkeit sowie Datennormalisierung für bessere automatische Validierung.',
+          'Angular-Latenz um ca. 500 ms und API-Aufrufe um 30 % reduziert.',
+          'Zwei Junior-Entwickler in Java, Spring Boot und BPM eingearbeitet und betreut.',
+        ],
+        tech: experienceTech.flawless,
+      },
+    ],
+    skills: [
+      { type: 'Sprachen', glyph: '⚡', items: skillItems.languages },
+      { type: 'Backend', glyph: '🔥', items: skillItems.backend },
+      { type: 'Daten & Messaging', glyph: '💧', items: skillItems.data },
+      { type: 'Infra & DevOps', glyph: '🌿', items: skillItems.infra },
+      { type: 'Frontend', glyph: '✨', items: skillItems.frontend },
+      { type: 'KI-gestützte Entwicklung', glyph: '🔮', items: skillItems.ai },
+    ],
+    education: [
+      { school: 'Universität Maribor', faculty: 'Fakultät für Elektrotechnik und Informatik', degree: 'Master, Computer- und Informationstechnologien', period: 'Okt. 2022 – März 2025', thesis: 'Geschäftsprozessautomatisierung mit der Camunda-Plattform' },
+      { school: 'Universität Maribor', faculty: 'Fakultät für Elektrotechnik und Informatik', degree: 'Bachelor, Computer- und Informationstechnologien', period: 'Okt. 2018 – Sep. 2022', thesis: 'Kontaktloses Arbeitszeiterfassungssystem mit Raspberry Pi' },
+    ],
+    spoken: [
+      { name: 'Slowenisch', level: 'Muttersprache', pct: 100 },
+      { name: 'Englisch', level: 'Verhandlungssicher, B2 zertifiziert', pct: 80 },
+      { name: 'Deutsch', level: 'Fortgeschritten, B2 zertifiziert', pct: 75 },
+      { name: 'Japanisch', level: 'Grundkenntnisse, im Studium', pct: 30 },
+    ],
+    contact: { heading: 'Lass uns etwas bauen', note: 'Wohnhaft in Japan · Ehepartner eines japanischen Staatsangehörigen · Kein Sponsoring nötig' },
+  },
+
+  ja: {
+    ui: { experience: '職歴', skills: 'スキル', education: '学歴', languages: '語学', contact: 'お問い合わせ', scroll: 'スクロールしてドロー', present: '現在', lead: 'テックリード', email: 'メール' },
+    hero: {
+      name: 'ガツニク・ヤン・アロイズ',
+      role: 'バックエンドソフトウェアエンジニア',
+      location: '日本・千葉',
+      tagline: '速く、一貫性を保ち、止まらない分散システムを。',
+      summary:
+        'フィンテックと大規模コンシューマー向けプラットフォームで5年以上の経験を持つバックエンドエンジニア。楽天にてグローバル分散バックエンドの開発に携わり、少人数チームのテックリードを担当しています。Kotlin、Scala、Javaを得意とし、データ整合性、並行処理、マイクロサービスアーキテクチャに深い知見があります。Claude Codeのエージェントとマルチエージェントワークフローを用いたAI支援開発をいち早く取り入れました。',
+      stats: [
+        { value: 5, suffix: '年以上', label: 'フィンテック・大規模開発' },
+        { value: 50, suffix: '%', label: 'PRレビュー期間の短縮' },
+        { value: 25, suffix: '%', label: '与信承認スループット向上' },
+        { value: 0, suffix: '', label: '本番データ操作のダウンタイム' },
+      ],
+    },
+    experience: [
+      {
+        company: '楽天',
+        role: 'アプリケーションエンジニア',
+        period: '2025年8月 – 現在',
+        place: '東京',
+        rarity: 'legendary',
+        blurb: '高スループットと低レイテンシが求められる、グローバル分散プラットフォームのコアバックエンド。',
+        points: [
+          '入社1年以内に、エンジニア3名のアジャイルチームでテックリードを担当。作業計画、設計判断、クライアント・QA・DevOpsの窓口を務めました。',
+          'KotlinとScalaで、高スループットなユーザーデータ処理のバックエンドサービスを開発。信頼性と低レイテンシを重視しました。',
+          '新規プロジェクトをアーキテクチャ部門に提案し、設計を主導して複数チームへの展開を推進しました。',
+          'Claude Codeのエージェント、フック、マルチエージェントワークフローをチームに導入し、PRのレビュー期間を最大50%短縮しました。',
+          'グローバル分散プラットフォームにおけるデータ整合性と並行処理の課題を解決しました。',
+          '厳しい期限の中、大規模な本番データ操作を計画・実施し、ダウンタイムとデータ損失ゼロを達成しました。',
+          '関数型Scala（ZIO）アーキテクチャへの大規模なバックエンド移行に貢献しました。',
+        ],
+        tech: experienceTech.rakuten,
+      },
+      {
+        company: 'Flawless Code',
+        role: 'フルスタックソフトウェアエンジニア',
+        period: '2021年2月 – 2025年8月',
+        place: 'スロベニア・マリボル（リモート）',
+        rarity: 'epic',
+        blurb: '大量の与信申請と書類を処理する、欧州金融向けのクレジット処理プラットフォーム。',
+        points: [
+          '8名のアジャイルチームで、与信ワークフローを自動化するSpring Bootマイクロサービスを開発しました。',
+          'ビジネスアナリストと協力し、BPMN / Activitiの業務プロセスを設計・最適化しました。',
+          '並列処理と自動化により与信承認のスループットを25%向上させ、手作業の審査負荷を削減しました。',
+          '精度90%以上のOCR書類処理システムと、自動検証率を高めるデータ正規化に貢献しました。',
+          'Angularアプリの遅延を約500ms短縮し、API呼び出しを30%削減しました。',
+          'ジュニア開発者2名にJava、Spring Boot、BPMを指導しました。',
+        ],
+        tech: experienceTech.flawless,
+      },
+    ],
+    skills: [
+      { type: '言語', glyph: '⚡', items: skillItems.languages },
+      { type: 'バックエンド', glyph: '🔥', items: skillItems.backend },
+      { type: 'データ・メッセージング', glyph: '💧', items: skillItems.data },
+      { type: 'インフラ・DevOps', glyph: '🌿', items: skillItems.infra },
+      { type: 'フロントエンド', glyph: '✨', items: skillItems.frontend },
+      { type: 'AI支援開発', glyph: '🔮', items: skillItems.ai },
+    ],
+    education: [
+      { school: 'マリボル大学', faculty: '電気工学・コンピュータ科学部', degree: '修士（コンピュータ・情報技術）', period: '2022年10月 – 2025年3月', thesis: 'Camundaプラットフォームによる業務プロセス自動化' },
+      { school: 'マリボル大学', faculty: '電気工学・コンピュータ科学部', degree: '学士（コンピュータ・情報技術）', period: '2018年10月 – 2022年9月', thesis: 'Raspberry Piを用いた非接触勤怠管理システム' },
+    ],
+    spoken: [
+      { name: 'スロベニア語', level: 'ネイティブ', pct: 100 },
+      { name: '英語', level: 'ビジネスレベル（B2認定）', pct: 80 },
+      { name: 'ドイツ語', level: '上級（B2認定）', pct: 75 },
+      { name: '日本語', level: '基礎・勉強中', pct: 30 },
+    ],
+    contact: { heading: '一緒に作りましょう', note: '日本在住 · 日本人の配偶者 · スポンサー不要' },
+  },
+};
+
+export const email = 'gacnik.jan@gmail.com';

@@ -1,39 +1,30 @@
 :root,
 [data-lang='en'] {
-  --bg: #0b1020;
-  --surface: #131a33;
-  --text: #eaf0ff;
-  --muted: #8f9bc4;
-  --accent: #4da3ff;
-  --accent-2: #ffd24d;
-  --glow: 77 163 255;
+  --bg: #f7f8fb;
+  --surface: #ffffff;
+  --text: #14181f;
+  --muted: #5b6472;
+  --accent: #2b5fd9;
+  --accent-2: #c9a227;
+  --glow: 43 95 217;
 }
 [data-lang='sl'] {
-  --bg: #0a1510;
-  --surface: #11241b;
-  --text: #e9f5ee;
-  --muted: #86a597;
-  --accent: #3ddc84;
-  --accent-2: #c9d6d0;
-  --glow: 61 220 132;
+  --bg: #f5f8f5;
+  --surface: #ffffff;
+  --text: #14201a;
+  --muted: #566a5e;
+  --accent: #1f7a4d;
+  --accent-2: #8a9a92;
+  --glow: 31 122 77;
 }
 [data-lang='de'] {
-  --bg: #130b0d;
-  --surface: #221217;
-  --text: #f6eaec;
-  --muted: #b08a91;
-  --accent: #ff3b4e;
-  --accent-2: #ffb02e;
-  --glow: 255 59 78;
-}
-[data-lang='ja'] {
-  --bg: #120d1f;
-  --surface: #1d1533;
-  --text: #f6eefa;
-  --muted: #a899c4;
-  --accent: #ff7eb6;
-  --accent-2: #8f9bff;
-  --glow: 255 126 182;
+  --bg: #faf6f5;
+  --surface: #ffffff;
+  --text: #201416;
+  --muted: #6b5659;
+  --accent: #b3202f;
+  --accent-2: #c98a1a;
+  --glow: 179 32 47;
 }
 
 * {
@@ -43,52 +34,51 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: none;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Space Grotesk', 'Noto Sans JP', system-ui, sans-serif;
-  line-height: 1.6;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  line-height: 1.65;
   transition: background 0.6s, color 0.6s;
   overflow-x: hidden;
 }
 
-[lang='ja'] body {
-  font-family: 'Noto Sans JP', 'Space Grotesk', sans-serif;
-  line-height: 1.8;
+section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5rem 1.25rem;
 }
 
-section {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 6rem 1.25rem;
+h1,
+h2,
+h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
 }
 
 h2 {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
   margin-bottom: 2.5rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 h2::after {
   content: '';
   display: block;
-  width: 3.5rem;
-  height: 4px;
+  width: 2.5rem;
+  height: 2px;
   margin-top: 0.6rem;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  background: var(--accent);
 }
 
 .chip {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  padding: 0.2rem 0.6rem;
+  font-size: 0.78rem;
+  padding: 0.15rem 0.65rem;
   border-radius: 999px;
-  border: 1px solid rgb(var(--glow) / 0.4);
-  color: var(--accent);
+  border: 1px solid rgb(var(--glow) / 0.3);
+  color: var(--muted);
   white-space: nowrap;
 }
 

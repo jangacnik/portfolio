@@ -2,7 +2,6 @@ export const languages = [
   { code: 'en', label: 'EN' },
   { code: 'sl', label: 'SL' },
   { code: 'de', label: 'DE' },
-  { code: 'ja', label: '日本語' },
 ];
 
 const experienceTech = {
@@ -42,7 +41,6 @@ export const content = {
         role: 'Application Engineer',
         period: 'Aug 2025 – Present',
         place: 'Tokyo, Japan',
-        rarity: 'legendary',
         blurb: 'Core backend of a globally distributed platform with high-throughput, low-latency requirements.',
         points: [
           'Took on tech-lead responsibilities within the first year in a 3-engineer Agile team: planning, design decisions, and main contact for clients, QA and DevOps.',
@@ -60,7 +58,6 @@ export const content = {
         role: 'Full-stack Software Engineer',
         period: 'Feb 2021 – Aug 2025',
         place: 'Maribor, Slovenia (Remote)',
-        rarity: 'epic',
         blurb: 'Credit processing platform for the European financial sector, handling high volumes of requests and documents.',
         points: [
           'Developed Spring Boot microservices for automated credit workflows in an 8-person Agile team.',
@@ -74,12 +71,12 @@ export const content = {
       },
     ],
     skills: [
-      { type: 'Languages', glyph: '⚡', items: skillItems.languages },
-      { type: 'Backend', glyph: '🔥', items: skillItems.backend },
-      { type: 'Data & Messaging', glyph: '💧', items: skillItems.data },
-      { type: 'Infra & DevOps', glyph: '🌿', items: skillItems.infra },
-      { type: 'Frontend', glyph: '✨', items: skillItems.frontend },
-      { type: 'AI-assisted dev', glyph: '🔮', items: skillItems.ai },
+      { type: 'Languages', items: skillItems.languages },
+      { type: 'Backend', items: skillItems.backend },
+      { type: 'Data & Messaging', items: skillItems.data },
+      { type: 'Infra & DevOps', items: skillItems.infra },
+      { type: 'Frontend', items: skillItems.frontend },
+      { type: 'AI-assisted dev', items: skillItems.ai },
     ],
     education: [
       { school: 'University of Maribor', faculty: 'Faculty of Electrical Engineering and Computer Science', degree: "Master's, Computer and Information Technologies", period: 'Oct 2022 – Mar 2025', thesis: 'Business process automation using the Camunda platform' },
@@ -116,7 +113,6 @@ export const content = {
         role: 'Application Engineer',
         period: 'avg. 2025 – danes',
         place: 'Tokio, Japonska',
-        rarity: 'legendary',
         blurb: 'Jedro backenda globalno porazdeljene platforme z visoko prepustnostjo in nizko latenco.',
         points: [
           'V prvem letu prevzel vlogo tehničnega vodje v agilni ekipi treh inženirjev: načrtovanje, tehnične odločitve ter glavni stik za naročnike, QA in DevOps.',
@@ -134,7 +130,6 @@ export const content = {
         role: 'Full-stack programski inženir',
         period: 'feb. 2021 – avg. 2025',
         place: 'Maribor, Slovenija (na daljavo)',
-        rarity: 'epic',
         blurb: 'Platforma za obdelavo kreditov za evropski finančni sektor z velikim obsegom zahtevkov in dokumentov.',
         points: [
           'Razvoj Spring Boot mikrostoritev za avtomatizirane kreditne procese v agilni ekipi osmih ljudi.',
@@ -148,12 +143,12 @@ export const content = {
       },
     ],
     skills: [
-      { type: 'Jeziki', glyph: '⚡', items: skillItems.languages },
-      { type: 'Backend', glyph: '🔥', items: skillItems.backend },
-      { type: 'Podatki in sporočanje', glyph: '💧', items: skillItems.data },
-      { type: 'Infrastruktura in DevOps', glyph: '🌿', items: skillItems.infra },
-      { type: 'Frontend', glyph: '✨', items: skillItems.frontend },
-      { type: 'Razvoj z UI', glyph: '🔮', items: skillItems.ai },
+      { type: 'Jeziki', items: skillItems.languages },
+      { type: 'Backend', items: skillItems.backend },
+      { type: 'Podatki in sporočanje', items: skillItems.data },
+      { type: 'Infrastruktura in DevOps', items: skillItems.infra },
+      { type: 'Frontend', items: skillItems.frontend },
+      { type: 'Razvoj z UI', items: skillItems.ai },
     ],
     education: [
       { school: 'Univerza v Mariboru', faculty: 'Fakulteta za elektrotehniko, računalništvo in informatiko', degree: 'Magisterij, računalništvo in informacijske tehnologije', period: 'okt. 2022 – mar. 2025', thesis: 'Avtomatizacija poslovnih procesov s platformo Camunda' },
@@ -190,7 +185,6 @@ export const content = {
         role: 'Application Engineer',
         period: 'Aug. 2025 – heute',
         place: 'Tokio, Japan',
-        rarity: 'legendary',
         blurb: 'Kern-Backend einer global verteilten Plattform mit hohem Durchsatz und niedriger Latenz.',
         points: [
           'Im ersten Jahr Tech-Lead-Aufgaben in einem agilen Team mit drei Entwicklern übernommen: Planung, Designentscheidungen und Hauptansprechpartner für Kunden, QA und DevOps.',
@@ -208,7 +202,6 @@ export const content = {
         role: 'Full-Stack Software Engineer',
         period: 'Feb. 2021 – Aug. 2025',
         place: 'Maribor, Slowenien (Remote)',
-        rarity: 'epic',
         blurb: 'Kreditverarbeitungsplattform für den europäischen Finanzsektor mit hohem Aufkommen an Anträgen und Dokumenten.',
         points: [
           'Spring-Boot-Microservices für automatisierte Kredit-Workflows in einem agilen 8-Personen-Team entwickelt.',
@@ -222,12 +215,12 @@ export const content = {
       },
     ],
     skills: [
-      { type: 'Sprachen', glyph: '⚡', items: skillItems.languages },
-      { type: 'Backend', glyph: '🔥', items: skillItems.backend },
-      { type: 'Daten & Messaging', glyph: '💧', items: skillItems.data },
-      { type: 'Infra & DevOps', glyph: '🌿', items: skillItems.infra },
-      { type: 'Frontend', glyph: '✨', items: skillItems.frontend },
-      { type: 'KI-gestützte Entwicklung', glyph: '🔮', items: skillItems.ai },
+      { type: 'Sprachen', items: skillItems.languages },
+      { type: 'Backend', items: skillItems.backend },
+      { type: 'Daten & Messaging', items: skillItems.data },
+      { type: 'Infra & DevOps', items: skillItems.infra },
+      { type: 'Frontend', items: skillItems.frontend },
+      { type: 'KI-gestützte Entwicklung', items: skillItems.ai },
     ],
     education: [
       { school: 'Universität Maribor', faculty: 'Fakultät für Elektrotechnik und Informatik', degree: 'Master, Computer- und Informationstechnologien', period: 'Okt. 2022 – März 2025', thesis: 'Geschäftsprozessautomatisierung mit der Camunda-Plattform' },
@@ -240,80 +233,6 @@ export const content = {
       { name: 'Japanisch', level: 'Grundkenntnisse, im Studium', pct: 30 },
     ],
     contact: { heading: 'Lass uns etwas bauen', note: 'Wohnhaft in Japan · Ehepartner eines japanischen Staatsangehörigen · Kein Sponsoring nötig' },
-  },
-
-  ja: {
-    ui: { experience: '職歴', skills: 'スキル', education: '学歴', languages: '語学', contact: 'お問い合わせ', scroll: 'スクロールしてドロー', present: '現在', lead: 'テックリード', email: 'メール' },
-    hero: {
-      name: 'ガツニク・ヤン・アロイズ',
-      role: 'バックエンドソフトウェアエンジニア',
-      location: '日本・千葉',
-      tagline: '速く、一貫性を保ち、止まらない分散システムを。',
-      summary:
-        'フィンテックと大規模コンシューマー向けプラットフォームで5年以上の経験を持つバックエンドエンジニア。楽天にてグローバル分散バックエンドの開発に携わり、少人数チームのテックリードを担当しています。Kotlin、Scala、Javaを得意とし、データ整合性、並行処理、マイクロサービスアーキテクチャに深い知見があります。Claude Codeのエージェントとマルチエージェントワークフローを用いたAI支援開発をいち早く取り入れました。',
-      stats: [
-        { value: 5, suffix: '年以上', label: 'フィンテック・大規模開発' },
-        { value: 50, suffix: '%', label: 'PRレビュー期間の短縮' },
-        { value: 25, suffix: '%', label: '与信承認スループット向上' },
-        { value: 0, suffix: '', label: '本番データ操作のダウンタイム' },
-      ],
-    },
-    experience: [
-      {
-        company: '楽天',
-        role: 'アプリケーションエンジニア',
-        period: '2025年8月 – 現在',
-        place: '東京',
-        rarity: 'legendary',
-        blurb: '高スループットと低レイテンシが求められる、グローバル分散プラットフォームのコアバックエンド。',
-        points: [
-          '入社1年以内に、エンジニア3名のアジャイルチームでテックリードを担当。作業計画、設計判断、クライアント・QA・DevOpsの窓口を務めました。',
-          'KotlinとScalaで、高スループットなユーザーデータ処理のバックエンドサービスを開発。信頼性と低レイテンシを重視しました。',
-          '新規プロジェクトをアーキテクチャ部門に提案し、設計を主導して複数チームへの展開を推進しました。',
-          'Claude Codeのエージェント、フック、マルチエージェントワークフローをチームに導入し、PRのレビュー期間を最大50%短縮しました。',
-          'グローバル分散プラットフォームにおけるデータ整合性と並行処理の課題を解決しました。',
-          '厳しい期限の中、大規模な本番データ操作を計画・実施し、ダウンタイムとデータ損失ゼロを達成しました。',
-          '関数型Scala（ZIO）アーキテクチャへの大規模なバックエンド移行に貢献しました。',
-        ],
-        tech: experienceTech.rakuten,
-      },
-      {
-        company: 'Flawless Code',
-        role: 'フルスタックソフトウェアエンジニア',
-        period: '2021年2月 – 2025年8月',
-        place: 'スロベニア・マリボル（リモート）',
-        rarity: 'epic',
-        blurb: '大量の与信申請と書類を処理する、欧州金融向けのクレジット処理プラットフォーム。',
-        points: [
-          '8名のアジャイルチームで、与信ワークフローを自動化するSpring Bootマイクロサービスを開発しました。',
-          'ビジネスアナリストと協力し、BPMN / Activitiの業務プロセスを設計・最適化しました。',
-          '並列処理と自動化により与信承認のスループットを25%向上させ、手作業の審査負荷を削減しました。',
-          '精度90%以上のOCR書類処理システムと、自動検証率を高めるデータ正規化に貢献しました。',
-          'Angularアプリの遅延を約500ms短縮し、API呼び出しを30%削減しました。',
-          'ジュニア開発者2名にJava、Spring Boot、BPMを指導しました。',
-        ],
-        tech: experienceTech.flawless,
-      },
-    ],
-    skills: [
-      { type: '言語', glyph: '⚡', items: skillItems.languages },
-      { type: 'バックエンド', glyph: '🔥', items: skillItems.backend },
-      { type: 'データ・メッセージング', glyph: '💧', items: skillItems.data },
-      { type: 'インフラ・DevOps', glyph: '🌿', items: skillItems.infra },
-      { type: 'フロントエンド', glyph: '✨', items: skillItems.frontend },
-      { type: 'AI支援開発', glyph: '🔮', items: skillItems.ai },
-    ],
-    education: [
-      { school: 'マリボル大学', faculty: '電気工学・コンピュータ科学部', degree: '修士（コンピュータ・情報技術）', period: '2022年10月 – 2025年3月', thesis: 'Camundaプラットフォームによる業務プロセス自動化' },
-      { school: 'マリボル大学', faculty: '電気工学・コンピュータ科学部', degree: '学士（コンピュータ・情報技術）', period: '2018年10月 – 2022年9月', thesis: 'Raspberry Piを用いた非接触勤怠管理システム' },
-    ],
-    spoken: [
-      { name: 'スロベニア語', level: 'ネイティブ', pct: 100 },
-      { name: '英語', level: 'ビジネスレベル（B2認定）', pct: 80 },
-      { name: 'ドイツ語', level: '上級（B2認定）', pct: 75 },
-      { name: '日本語', level: '基礎・勉強中', pct: 30 },
-    ],
-    contact: { heading: '一緒に作りましょう', note: '日本在住 · 日本人の配偶者 · スポンサー不要' },
   },
 };
 

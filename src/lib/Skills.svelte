@@ -6,7 +6,7 @@
 
   let { title, groups, ui } = $props();
   const tones = ['green', 'blue', 'black', 'red', 'white', 'artifact'];
-  const pipCounts = [2, 3, 1, 3, 2, 1];
+  const pipCounts = Array.from({ length: groups.length }, () => Math.floor(Math.random() * 3));
 </script>
 
 <section id="skills">
@@ -14,7 +14,7 @@
   <Reveal>
     <CardStack items={groups} prev={ui.prev} next={ui.next}>
       {#snippet card(group, index)}
-        <Card title={group.type} badge={group.items.length} kind={title} tone={tones[index % tones.length]} icon={group.icon} pips={pipCounts[index % pipCounts.length]} footer={`${index + 1}/${groups.length}`}>
+        <Card title={group.type} badge={group.items.length} kind={title} tone={tones[index % tones.length]} icon={group.icon} pips={pipCounts[index]} footer={`${index + 1}/${groups.length}`}>
           {#snippet art()}<Placeholder label={group.type} src={group.photo} />{/snippet}
           <div class="items">
             {#each group.items as item}

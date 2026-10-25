@@ -17,6 +17,7 @@
 
 <style>
   .frame {
+    position: relative;
     display: grid;
     place-content: center;
     justify-items: center;
@@ -39,6 +40,9 @@
     stroke-linejoin: round;
   }
   img {
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;

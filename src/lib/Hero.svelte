@@ -7,10 +7,14 @@
   import Placeholder from './Placeholder.svelte';
   import Card from './Card.svelte';
 
-  import { socials } from './content.js';
+  import { socials, birthDate } from './content.js';
   import SocialIcon from './SocialIcon.svelte';
 
   let { hero, scrollLabel, ui } = $props();
+  const today = new Date();
+  const hadBirthday = today.getMonth() > birthDate.getMonth() || (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
+  const age = today.getFullYear() - birthDate.getFullYear() - (hadBirthday ? 0 : 1);
+
   let ready = $state(false);
   let flipped = $state(false);
 
@@ -39,6 +43,7 @@
           <p class="tagline" in:fly={{ y: 20, duration: 900, delay: 300, easing: cubicOut }}>{hero.tagline}</p>
           <p class="summary" in:fade={{ duration: 900, delay: 500 }}>{hero.summary}</p>
           <ul class="facts" in:fade={{ duration: 900, delay: 650 }}>
+            <li><span>{ui.age}</span>{age}</li>
             {#each hero.facts as fact}
               <li><span>{fact.label}</span>{fact.value}</li>
             {/each}
@@ -58,7 +63,7 @@
           <div class="inner">
             <div class="face">
               <Card title={hero.name} kind={hero.role} footer={hero.location} tone="gold" tall>
-                {#snippet art()}<Placeholder label={hero.name} src="/images/me.JPEG" position="50% 12%" />{/snippet}
+                {#snippet art()}<Placeholder label={hero.name} src="/images/me.JPEG" position="50% 0%" />{/snippet}
                 {hero.tagline}
               </Card>
             </div>

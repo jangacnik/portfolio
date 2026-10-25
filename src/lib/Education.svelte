@@ -4,6 +4,11 @@
   import Placeholder from './Placeholder.svelte';
 
   let { title, items, aside } = $props();
+
+  const splitDegree = (degree) => {
+    const [level, ...program] = degree.split(', ');
+    return { level, program: program.join(', ') };
+  };
 </script>
 
 <section id="education">
@@ -14,8 +19,9 @@
         <div class="pile">
           {#each items as school, index}
             <div class="slot" style="--z:{items.length - index}">
-              <Card title={school.school} kind={school.degree} footer={school.faculty} date={school.period} tone="white">
-                {#snippet art()}<Placeholder label={school.school} src={school.photo} />{/snippet}
+              <Card title={school.school} kind={splitDegree(school.degree).level} footer={school.faculty} date={school.period} tone="white" bleed={index > 0}>
+                {#snippet art()}<Placeholder label={school.school} src={school.photo} position="50% 20%" />{/snippet}
+                <p class="program">{splitDegree(school.degree).program}</p>
                 <p class="thesis">{school.thesis}</p>
               </Card>
             </div>
@@ -51,10 +57,14 @@
   }
   .slot + .slot {
     margin-top: calc(var(--height) / -2);
-    margin-left: 3rem;
+    margin-left: 5rem;
   }
   .slot:hover {
     z-index: 100;
+  }
+  .program {
+    margin-bottom: 0.4rem;
+    font-weight: 500;
   }
   .thesis {
     font-style: italic;

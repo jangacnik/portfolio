@@ -1,5 +1,5 @@
 <script>
-  import { content, email, socials } from './lib/content.js';
+  import { content, email, socials, lastUpdated } from './lib/content.js';
   import SocialIcon from './lib/SocialIcon.svelte';
   import { lang, applyLang } from './lib/lang.svelte.js';
   import LangSwitch from './lib/LangSwitch.svelte';
@@ -10,6 +10,7 @@
   import Reveal from './lib/Reveal.svelte';
 
   const text = $derived(content[lang.code]);
+  const updated = $derived(new Intl.DateTimeFormat(lang.code, { month: 'long', year: 'numeric' }).format(lastUpdated));
 
   $effect(applyLang);
 </script>
@@ -58,6 +59,8 @@
     </Reveal>
   </section>
 </main>
+
+<footer class="updated">{text.ui.updated}: {updated}</footer>
 
 <style>
   .bars {
@@ -134,6 +137,12 @@
   }
   .mail:hover {
     text-decoration: underline;
+  }
+  .updated {
+    padding: 1.5rem 1.25rem 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--muted);
   }
   .note {
     margin-top: 1.5rem;

@@ -14,7 +14,7 @@ const img = (name) => '/images/' + name + '.jpg';
 const experiencePhotos = {
   rakuten: {
     company: img('tokyo'),
-    responsibilities: [img('team'), img('servers'), img('blueprint'), img('network'), img('code')],
+    responsibilities: [img('team'), img('planning'), img('servers'), img('blueprint'), img('network'), img('code')],
     achievements: [img('debug'), img('datacenter')],
   },
   flawless: {
@@ -48,17 +48,17 @@ const skillItems = {
   data: ['Cassandra', 'MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'Kafka'],
   infra: ['Kubernetes', 'Docker', 'GCP', 'Jenkins', 'Kibana'],
   frontend: ['Vue.js', 'Angular', 'Ionic'],
-  ai: ['Claude Code agents', 'Hooks', 'Skills', 'Multi-agent workflows'],
+  ai: ['Claude Code agents', 'OpenCode', 'Hooks', 'Skills', 'Multi-agent workflows'],
 };
 
 export const content = {
   en: {
-    ui: { experience: 'Experience', skills: 'Skills', education: 'Education', languages: 'Languages', contact: 'Contact', scroll: 'Scroll to draw', present: 'Present', lead: 'Tech Lead', email: 'Email', responsibility: 'Responsibility', achievement: 'Achievement', stack: 'Tech Stack', prev: 'Previous', next: 'Next', flip: 'Flip card for socials', unflip: 'Flip back' },
+    ui: { experience: 'Experience', skills: 'Skills', education: 'Education', languages: 'Languages', contact: 'Contact', scroll: 'Scroll to draw', present: 'Present', lead: 'Tech Lead', email: 'Email', responsibility: 'Responsibility', achievement: 'Achievement', stack: 'Tech Stack', prev: 'Previous', next: 'Next', flip: 'Flip card for socials', unflip: 'Flip back', age: 'Age', updated: 'Last updated' },
     hero: {
       name: 'Jan Alojz Gačnik',
       role: 'Backend Software Engineer',
       location: 'Chiba, Japan',
-      facts: [{ label: 'Nationality', value: 'Slovenian' }, { label: 'Visa', value: 'Spouse of Japanese national · No sponsorship required' }],
+      facts: [{ label: 'Nationality', value: 'Slovenian' }, { label: 'Visa (Japan)', value: 'Spouse of Japanese national · No sponsorship required' }],
       tagline: 'Distributed systems that stay fast, consistent and online.',
       summary:
         'Backend engineer with 5+ years in fintech and large-scale consumer platforms. Building a globally distributed backend at Rakuten and leading a small team. Strong in Kotlin, Scala and Java, with deep experience in data consistency, concurrency and microservice architecture. Early adopter of AI-assisted development with Claude Code agents and multi-agent workflows.',
@@ -77,7 +77,8 @@ export const content = {
         place: 'Tokyo, Japan',
         blurb: 'Core backend of a globally distributed platform with high-throughput, low-latency requirements.',
         responsibilities: [
-          { title: 'Tech Lead', text: 'Took on tech-lead responsibilities within the first year in a 3-engineer Agile team: planning, design decisions, and main contact for clients, QA and DevOps.' },
+          { title: 'Tech Lead Duties', text: 'Took on tech-lead responsibilities to support the team and tech lead in a 3-engineer Agile team: planning, design decisions, and main contact for clients, QA and DevOps.' },
+          { title: 'Project Management', text: 'Handle project-management tasks: scheduling releases, running the release process, managing tasks and helping manage the team day to day.' },
           { title: 'Backend Services', text: 'Built backend services for high-throughput user data operations in Kotlin and Scala, focused on reliability and low latency.' },
           { title: 'Project Proposals', text: 'Proposed new projects to architecture leadership, owned the design and drove adoption across teams.' },
           { title: 'Data Consistency', text: 'Solved data consistency and concurrency challenges in a globally distributed platform.' },
@@ -132,12 +133,12 @@ export const content = {
   },
 
   sl: {
-    ui: { experience: 'Izkušnje', skills: 'Znanja', education: 'Izobrazba', languages: 'Jeziki', contact: 'Kontakt', scroll: 'Povleci za naprej', present: 'Danes', lead: 'Tehnični vodja', email: 'E-pošta', responsibility: 'Odgovornost', achievement: 'Dosežek', stack: 'Tehnologije', prev: 'Nazaj', next: 'Naprej', flip: 'Obrni kartico za omrežja', unflip: 'Obrni nazaj' },
+    ui: { experience: 'Izkušnje', skills: 'Znanja', education: 'Izobrazba', languages: 'Jeziki', contact: 'Kontakt', scroll: 'Povleci za naprej', present: 'Danes', lead: 'Tehnični vodja', email: 'E-pošta', responsibility: 'Odgovornost', achievement: 'Dosežek', stack: 'Tehnologije', prev: 'Nazaj', next: 'Naprej', flip: 'Obrni kartico za omrežja', unflip: 'Obrni nazaj', age: 'Starost', updated: 'Nazadnje posodobljeno' },
     hero: {
       name: 'Jan Alojz Gačnik',
       role: 'Backend programski inženir',
       location: 'Chiba, Japonska',
-      facts: [{ label: 'Državljanstvo', value: 'Slovensko' }, { label: 'Viza', value: 'Zakonec japonskega državljana · Sponzorstvo ni potrebno' }],
+      facts: [{ label: 'Državljanstvo', value: 'Slovensko' }, { label: 'Viza (Japonska)', value: 'Zakonec japonskega državljana · Sponzorstvo ni potrebno' }],
       tagline: 'Porazdeljeni sistemi, ki ostanejo hitri, konsistentni in dostopni.',
       summary:
         'Backend inženir z več kot 5 leti izkušenj v fintechu in velikih potrošniških platformah. V Rakutnu razvijam globalno porazdeljen backend in vodim manjšo ekipo. Močan v Kotlinu, Scali in Javi, z globokim znanjem o konsistentnosti podatkov, sočasnosti in mikrostoritveni arhitekturi. Zgodnji uporabnik razvoja z umetno inteligenco: agenti Claude Code in večagentni delovni tokovi.',
@@ -156,7 +157,8 @@ export const content = {
         place: 'Tokio, Japonska',
         blurb: 'Jedro backenda globalno porazdeljene platforme z visoko prepustnostjo in nizko latenco.',
         responsibilities: [
-          { title: 'Tehnični vodja', text: 'V prvem letu prevzel vlogo tehničnega vodje v agilni ekipi treh inženirjev: načrtovanje, tehnične odločitve ter glavni stik za naročnike, QA in DevOps.' },
+          { title: 'Naloge tehničnega vodje', text: 'Prevzel odgovornosti tehničnega vodje za podporo ekipi in tehničnemu vodji v agilni ekipi treh inženirjev: načrtovanje, tehnične odločitve ter glavni stik za naročnike, QA in DevOps.' },
+          { title: 'Vodenje projekta', text: 'Opravljam naloge vodenja projekta: načrtovanje izdaj, izvajanje procesa izdaj, upravljanje nalog in vsakodnevna pomoč pri vodenju ekipe.' },
           { title: 'Backend storitve', text: 'Razvoj backend storitev za visokozmogljive operacije nad uporabniškimi podatki v Kotlinu in Scali, s poudarkom na zanesljivosti in nizki latenci.' },
           { title: 'Predlogi projektov', text: 'Predlagal nove projekte vodstvu arhitekture, prevzel načrtovanje arhitekture in vodil uvedbo med ekipami.' },
           { title: 'Konsistentnost', text: 'Rešil izzive konsistentnosti podatkov in sočasnosti v globalno porazdeljeni platformi.' },
@@ -211,12 +213,12 @@ export const content = {
   },
 
   de: {
-    ui: { experience: 'Erfahrung', skills: 'Fähigkeiten', education: 'Ausbildung', languages: 'Sprachen', contact: 'Kontakt', scroll: 'Scrollen zum Ziehen', present: 'Heute', lead: 'Tech Lead', email: 'E-Mail', responsibility: 'Aufgabe', achievement: 'Erfolg', stack: 'Tech-Stack', prev: 'Zurück', next: 'Weiter', flip: 'Karte drehen für Social Links', unflip: 'Zurückdrehen' },
+    ui: { experience: 'Erfahrung', skills: 'Fähigkeiten', education: 'Ausbildung', languages: 'Sprachen', contact: 'Kontakt', scroll: 'Scrollen zum Ziehen', present: 'Heute', lead: 'Tech Lead', email: 'E-Mail', responsibility: 'Aufgabe', achievement: 'Erfolg', stack: 'Tech-Stack', prev: 'Zurück', next: 'Weiter', flip: 'Karte drehen für Social Links', unflip: 'Zurückdrehen', age: 'Alter', updated: 'Zuletzt aktualisiert' },
     hero: {
       name: 'Jan Alojz Gačnik',
       role: 'Backend Software Engineer',
       location: 'Chiba, Japan',
-      facts: [{ label: 'Nationalität', value: 'Slowenisch' }, { label: 'Visum', value: 'Ehepartner eines japanischen Staatsangehörigen · Kein Sponsoring nötig' }],
+      facts: [{ label: 'Nationalität', value: 'Slowenisch' }, { label: 'Visum (Japan)', value: 'Ehepartner eines japanischen Staatsangehörigen · Kein Sponsoring nötig' }],
       tagline: 'Verteilte Systeme, die schnell, konsistent und verfügbar bleiben.',
       summary:
         'Backend-Entwickler mit über 5 Jahren Erfahrung in Fintech und großen Consumer-Plattformen. Bei Rakuten baue ich ein global verteiltes Backend und übernehme Tech-Lead-Aufgaben in einem kleinen Team. Stark in Kotlin, Scala und Java, mit fundierter Erfahrung in Datenkonsistenz, Nebenläufigkeit und Microservice-Architektur. Früher Anwender KI-gestützter Entwicklung mit Claude-Code-Agenten und Multi-Agent-Workflows.',
@@ -235,7 +237,8 @@ export const content = {
         place: 'Tokio, Japan',
         blurb: 'Kern-Backend einer global verteilten Plattform mit hohem Durchsatz und niedriger Latenz.',
         responsibilities: [
-          { title: 'Tech Lead', text: 'Im ersten Jahr Tech-Lead-Aufgaben in einem agilen Team mit drei Entwicklern übernommen: Planung, Designentscheidungen und Hauptansprechpartner für Kunden, QA und DevOps.' },
+          { title: 'Tech-Lead-Aufgaben', text: 'Tech-Lead-Aufgaben übernommen, um Team und Tech Lead in einem agilen Team mit drei Entwicklern zu unterstützen: Planung, Designentscheidungen und Hauptansprechpartner für Kunden, QA und DevOps.' },
+          { title: 'Projektmanagement', text: 'Übernehme Projektmanagement-Aufgaben: Release-Planung, Durchführung des Release-Prozesses, Aufgabenverwaltung und tägliche Unterstützung bei der Teamführung.' },
           { title: 'Backend-Services', text: 'Backend-Services für hochperformante Nutzerdaten-Operationen in Kotlin und Scala entwickelt, mit Fokus auf Zuverlässigkeit und niedrige Latenz.' },
           { title: 'Projektvorschläge', text: 'Neue Projekte der Architekturleitung vorgeschlagen, das Design verantwortet und die teamübergreifende Einführung vorangetrieben.' },
           { title: 'Datenkonsistenz', text: 'Herausforderungen bei Datenkonsistenz und Nebenläufigkeit in einer global verteilten Plattform gelöst.' },
@@ -297,3 +300,7 @@ export const socials = [
   { key: 'github', name: 'GitHub', href: 'https://github.com/jangacnik', handle: 'jangacnik' },
   { key: 'email', name: null, href: `mailto:${email}`, handle: email },
 ];
+
+export const birthDate = new Date(1999, 0, 20);
+
+export const lastUpdated = new Date(2026, 9, 1);

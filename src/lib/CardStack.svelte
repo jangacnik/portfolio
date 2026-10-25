@@ -1,16 +1,50 @@
 <script>
-  let { items, card, prev, next } = $props();
+  let { items, card, prev, next, groupOf = () => undefined } = $props();
   let track = $state();
   let dragging = $state(false);
+  let expanded = $state({});
   let drag = null;
+  let suppressClick = false;
 
-  function stepWidth() {
-    const slots = track.children;
-    return slots.length > 1 ? slots[1].offsetLeft - slots[0].offsetLeft : slots[0].offsetWidth;
+  const counts = $derived(
+    items.reduce((total, item) => {
+      const group = groupOf(item);
+      if (group) total[group] = (total[group] ?? 0) + 1;
+      return total;
+    }, {})
+  );
+
+  const isGroupable = (item) => Boolean(groupOf(item)) && counts[groupOf(item)] > 1;
+
+  const isStacked = (item) => isGroupable(item) && !expanded[groupOf(item)];
+
+  const isFirstOfGroup = (index) => index === 0 || groupOf(items[index - 1]) !== groupOf(items[index]);
+
+  function gap(index) {
+    if (index === items.length - 1) return '0px';
+    if (groupOf(items[index]) !== groupOf(items[index + 1])) return '1.5rem';
+    return isStacked(items[index]) ? 'calc(1.6rem - var(--w))' : '-1.5rem';
+  }
+
+  function toggle(item) {
+    if (suppressClick || !isGroupable(item)) return;
+    expanded[groupOf(item)] = isStacked(item);
+  }
+
+  function snapPoints() {
+    const max = track.scrollWidth - track.clientWidth;
+    const padding = parseFloat(getComputedStyle(track).scrollPaddingInlineStart) || 0;
+    const starts = [...track.children]
+      .filter((_, index) => !isStacked(items[index]) || isFirstOfGroup(index))
+      .map((slot) => Math.min(max, Math.max(0, slot.offsetLeft - padding)));
+    return [...new Set([...starts, max])].sort((a, b) => a - b);
   }
 
   function step(direction) {
-    track.scrollBy({ left: direction * stepWidth(), behavior: 'smooth' });
+    const points = snapPoints();
+    const current = track.scrollLeft;
+    const target = direction > 0 ? points.find((point) => point > current + 4) : points.findLast((point) => point < current - 4);
+    if (target !== undefined) track.scrollTo({ left: target, behavior: 'smooth' });
   }
 
   function down(event) {
@@ -35,17 +69,16 @@
     const moved = drag.moved;
     drag = null;
     dragging = false;
-    if (moved) {
-      const width = stepWidth();
-      const max = track.scrollWidth - track.clientWidth;
-      const points = [max, ...Array.from({ length: Math.floor(max / width) + 1 }, (_, index) => index * width)];
-      const left = points.reduce((best, point) => (Math.abs(point - track.scrollLeft) < Math.abs(best - track.scrollLeft) ? point : best));
-      track.scrollTo({ left, behavior: 'smooth' });
-    }
+    if (!moved) return;
+    suppressClick = true;
+    setTimeout(() => (suppressClick = false));
+    const left = snapPoints().reduce((best, point) => (Math.abs(point - track.scrollLeft) < Math.abs(best - track.scrollLeft) ? point : best));
+    track.scrollTo({ left, behavior: 'smooth' });
   }
 </script>
 
 <div class="stack">
+  <!-- svelte-ignore a11y_no_static_element_interactions -->
   <div
     class="track"
     class:dragging
@@ -56,7 +89,21 @@
     onpointercancel={up}
   >
     {#each items as item, index}
-      <div class="slot" style="--z:{items.length - index}">{@render card(item, index)}</div>
+      {@const stacked = isStacked(item)}
+      <!-- svelte-ignore a11y_no_noninteractive_tabindex, a11y_no_noninteractive_element_interactions, a11y_no_static_element_interactions -->
+      <div
+        class="slot"
+        class:stacked
+        class:first={isFirstOfGroup(index)}
+        style="--z:{items.length - index}; margin-right:{gap(index)}"
+        class:groupable={isGroupable(item)}
+        role={isGroupable(item) ? 'button' : undefined}
+        tabindex={isGroupable(item) ? 0 : undefined}
+        onclick={() => toggle(item)}
+        onkeydown={(event) => (event.key === 'Enter' || event.key === ' ') && toggle(item)}
+      >
+        {@render card(item, index)}
+      </div>
     {/each}
   </div>
   <div class="nav">
@@ -66,7 +113,11 @@
 </div>
 
 <style>
+  .stack {
+    --w: min(17rem, 78vw);
+  }
   .track {
+    position: relative;
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -89,21 +140,28 @@
   }
   .slot {
     flex: none;
-    width: min(17rem, 78vw);
-    margin-right: -1.5rem;
+    width: var(--w);
     scroll-snap-align: start;
     z-index: var(--z);
-    transition: filter 0.3s;
-  }
-  .track:has(.slot:hover) .slot:not(:hover) {
-    filter: brightness(0.7) saturate(0.5) blur(1.5px);
-  }
-  .slot:hover {
-    z-index: 100;
+    transition: margin-right 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .slot:last-child {
-    margin-right: 0;
     scroll-snap-align: end;
+  }
+  .slot:not(.stacked):hover {
+    z-index: 100;
+  }
+  .slot.groupable {
+    cursor: pointer;
+  }
+  .slot.stacked:not(.first) {
+    scroll-snap-align: none;
+  }
+  .slot.stacked :global(.card:hover) {
+    transform: none;
+  }
+  .slot.stacked :global(.card:hover::after) {
+    opacity: 0;
   }
   .nav {
     display: flex;

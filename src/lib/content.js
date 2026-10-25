@@ -10,27 +10,28 @@ const experienceTech = {
 };
 
 const img = (name) => '/images/' + name + '.jpg';
+const diagram = (name) => ({ src: img(name), fit: 'contain', background: '#fff' });
 
 const experiencePhotos = {
   rakuten: {
-    company: img('tokyo'),
-    responsibilities: [img('team'), img('planning'), img('servers'), img('blueprint'), img('network'), img('code')],
-    achievements: [img('debug'), img('datacenter')],
+    company: img('rakuten'),
+    responsibilities: [img('tech-lead-duties'), img('project-management'), img('backend-services'), img('project-proposals'), img('data-consistency'), img('zio-migration')],
+    achievements: [img('claude-code-agents'), img('zero-downtime')],
   },
   flawless: {
-    company: img('payments'),
-    responsibilities: [img('springcode'), img('process'), img('documents'), img('mentor')],
-    achievements: [img('card'), img('stopwatch')],
+    company: img('flawless-code'),
+    responsibilities: [img('microservices'), diagram('bpmn-processes'), img('ocr-pipeline'), img('mentoring')],
+    achievements: [img('approval-throughput'), img('angular-speed-up')],
   },
 };
 
 const skillPhotos = {
-  languages: img('code'),
-  backend: img('servers'),
-  data: img('network'),
-  infra: img('containers'),
-  frontend: img('wireframe'),
-  ai: img('robot'),
+  languages: img('skill-languages'),
+  backend: img('skill-backend'),
+  data: img('skill-data-messaging'),
+  infra: img('skill-infra-devops'),
+  frontend: img('skill-frontend'),
+  ai: img('skill-ai-assisted-dev'),
 };
 
 const skillIcons = {
@@ -40,12 +41,12 @@ const skillIcons = {
   infra: 'cloud',
 };
 
-const educationPhotos = [img('campus'), img('campus2')];
+const educationPhotos = [img('education-masters'), img('education-bachelors')];
 
 const skillItems = {
   languages: ['Kotlin', 'Scala (ZIO)', 'Java', 'TypeScript', 'Python'],
   backend: ['Spring Boot', 'REST APIs', 'Maven', 'Gradle', 'JUnit 5', 'Activiti / BPMN'],
-  data: ['Cassandra', 'MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'Kafka'],
+  data: ['Cassandra', 'MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'Kafka', 'SSF'],
   infra: ['Kubernetes', 'Docker', 'GCP', 'Jenkins', 'Kibana'],
   frontend: ['Vue.js', 'Angular', 'Ionic'],
   ai: ['Claude Code agents', 'OpenCode', 'Hooks', 'Skills', 'Multi-agent workflows'],
@@ -53,20 +54,28 @@ const skillItems = {
 
 export const content = {
   en: {
-    ui: { experience: 'Experience', skills: 'Skills', education: 'Education', languages: 'Languages', contact: 'Contact', scroll: 'Scroll to draw', present: 'Present', lead: 'Tech Lead', email: 'Email', responsibility: 'Responsibility', achievement: 'Achievement', stack: 'Tech Stack', prev: 'Previous', next: 'Next', flip: 'Flip card for socials', unflip: 'Flip back', age: 'Age', updated: 'Last updated' },
+    ui: { experience: 'Experience', skills: 'Skills', education: 'Education', languages: 'Languages', contact: 'Contact', scroll: 'Scroll to draw', present: 'Present', lead: 'Tech Lead', email: 'Email', responsibility: 'Responsibility', achievement: 'Achievement', stack: 'Tech Stack', prev: 'Previous', next: 'Next', flip: 'Flip card for socials', unflip: 'Flip back', updated: 'Last updated' },
     hero: {
       name: 'Jan Alojz Gačnik',
       role: 'Backend Software Engineer',
       location: 'Chiba, Japan',
       facts: [{ label: 'Nationality', value: 'Slovenian' }, { label: 'Visa (Japan)', value: 'Spouse of Japanese national · No sponsorship required' }],
+      flavor: 'Quick to adapt. Quicker to deliver.',
+      cardTexts: [
+        'Fresh roast, clean commits. Love in one, care in the other.',
+        'Good coffee and good code: both are in the details.',
+        'Tap a coffee: gain one shipped feature.',
+        'Slow-brewed coffee, carefully crafted code.',
+      ],
       tagline: 'Distributed systems that stay fast, consistent and online.',
       summary:
         'Backend engineer with 5+ years in fintech and large-scale consumer platforms. Building a globally distributed backend at Rakuten and leading a small team. Strong in Kotlin, Scala and Java, with deep experience in data consistency, concurrency and microservice architecture. Early adopter of AI-assisted development with Claude Code agents and multi-agent workflows.',
       stats: [
         { value: 5, suffix: '+', label: 'Years in fintech & scale' },
         { value: 50, suffix: '%', label: 'Faster PR turnaround' },
-        { value: 25, suffix: '%', label: 'Higher approval throughput' },
-        { value: 0, suffix: '', label: 'Downtime in prod data ops' },
+        { value: 25, suffix: '%', label: 'Higher PR throughput' },
+        { value: 0, suffix: '', label: 'Production downtime' },
+        { value: 100, suffix: 'M+', label: 'Users on the systems I manage' },
       ],
     },
     experience: [
@@ -133,20 +142,28 @@ export const content = {
   },
 
   sl: {
-    ui: { experience: 'Izkušnje', skills: 'Znanja', education: 'Izobrazba', languages: 'Jeziki', contact: 'Kontakt', scroll: 'Povleci za naprej', present: 'Danes', lead: 'Tehnični vodja', email: 'E-pošta', responsibility: 'Odgovornost', achievement: 'Dosežek', stack: 'Tehnologije', prev: 'Nazaj', next: 'Naprej', flip: 'Obrni kartico za omrežja', unflip: 'Obrni nazaj', age: 'Starost', updated: 'Nazadnje posodobljeno' },
+    ui: { experience: 'Izkušnje', skills: 'Znanja', education: 'Izobrazba', languages: 'Jeziki', contact: 'Kontakt', scroll: 'Povleci za naprej', present: 'Danes', lead: 'Tehnični vodja', email: 'E-pošta', responsibility: 'Odgovornost', achievement: 'Dosežek', stack: 'Tehnologije', prev: 'Nazaj', next: 'Naprej', flip: 'Obrni kartico za omrežja', unflip: 'Obrni nazaj', updated: 'Nazadnje posodobljeno' },
     hero: {
       name: 'Jan Alojz Gačnik',
       role: 'Backend programski inženir',
       location: 'Chiba, Japonska',
       facts: [{ label: 'Državljanstvo', value: 'Slovensko' }, { label: 'Viza (Japonska)', value: 'Zakonec japonskega državljana · Sponzorstvo ni potrebno' }],
+      flavor: 'Hiter pri prilagajanju. Še hitrejši pri izvedbi.',
+      cardTexts: [
+        'Sveža pražena kava, čisti commiti. Ljubezen v enem, skrb v drugem.',
+        'Dobra kava in dobra koda: oboje je v podrobnostih.',
+        'Tapni kavo: pridobi eno dostavljeno funkcijo.',
+        'Počasi kuhana kava, skrbno izdelana koda.',
+      ],
       tagline: 'Porazdeljeni sistemi, ki ostanejo hitri, konsistentni in dostopni.',
       summary:
         'Backend inženir z več kot 5 leti izkušenj v fintechu in velikih potrošniških platformah. V Rakutnu razvijam globalno porazdeljen backend in vodim manjšo ekipo. Močan v Kotlinu, Scali in Javi, z globokim znanjem o konsistentnosti podatkov, sočasnosti in mikrostoritveni arhitekturi. Zgodnji uporabnik razvoja z umetno inteligenco: agenti Claude Code in večagentni delovni tokovi.',
       stats: [
         { value: 5, suffix: '+', label: 'let v fintechu in na veliki skali' },
         { value: 50, suffix: '%', label: 'hitrejši pregled PR-jev' },
-        { value: 25, suffix: '%', label: 'višja prepustnost odobritev' },
-        { value: 0, suffix: '', label: 'izpada pri produkcijskih operacijah' },
+        { value: 25, suffix: '%', label: 'višja prepustnost PR-jev' },
+        { value: 0, suffix: '', label: 'izpada v produkciji' },
+        { value: 100, suffix: 'M+', label: 'uporabnikov na sistemih, ki jih upravljam' },
       ],
     },
     experience: [
@@ -213,20 +230,28 @@ export const content = {
   },
 
   de: {
-    ui: { experience: 'Erfahrung', skills: 'Fähigkeiten', education: 'Ausbildung', languages: 'Sprachen', contact: 'Kontakt', scroll: 'Scrollen zum Ziehen', present: 'Heute', lead: 'Tech Lead', email: 'E-Mail', responsibility: 'Aufgabe', achievement: 'Erfolg', stack: 'Tech-Stack', prev: 'Zurück', next: 'Weiter', flip: 'Karte drehen für Social Links', unflip: 'Zurückdrehen', age: 'Alter', updated: 'Zuletzt aktualisiert' },
+    ui: { experience: 'Erfahrung', skills: 'Fähigkeiten', education: 'Ausbildung', languages: 'Sprachen', contact: 'Kontakt', scroll: 'Scrollen zum Ziehen', present: 'Heute', lead: 'Tech Lead', email: 'E-Mail', responsibility: 'Aufgabe', achievement: 'Erfolg', stack: 'Tech-Stack', prev: 'Zurück', next: 'Weiter', flip: 'Karte drehen für Social Links', unflip: 'Zurückdrehen', updated: 'Zuletzt aktualisiert' },
     hero: {
       name: 'Jan Alojz Gačnik',
       role: 'Backend Software Engineer',
       location: 'Chiba, Japan',
       facts: [{ label: 'Nationalität', value: 'Slowenisch' }, { label: 'Visum (Japan)', value: 'Ehepartner eines japanischen Staatsangehörigen · Kein Sponsoring nötig' }],
+      flavor: 'Schnell im Anpassen. Noch schneller im Liefern.',
+      cardTexts: [
+        'Frisch geröstet, saubere Commits. Liebe im einen, Sorgfalt im anderen.',
+        'Guter Kaffee und guter Code: beides steckt im Detail.',
+        'Tappe einen Kaffee: erhalte ein ausgeliefertes Feature.',
+        'Langsam gebrühter Kaffee, sorgfältig gefertigter Code.',
+      ],
       tagline: 'Verteilte Systeme, die schnell, konsistent und verfügbar bleiben.',
       summary:
         'Backend-Entwickler mit über 5 Jahren Erfahrung in Fintech und großen Consumer-Plattformen. Bei Rakuten baue ich ein global verteiltes Backend und übernehme Tech-Lead-Aufgaben in einem kleinen Team. Stark in Kotlin, Scala und Java, mit fundierter Erfahrung in Datenkonsistenz, Nebenläufigkeit und Microservice-Architektur. Früher Anwender KI-gestützter Entwicklung mit Claude-Code-Agenten und Multi-Agent-Workflows.',
       stats: [
         { value: 5, suffix: '+', label: 'Jahre Fintech & Skalierung' },
         { value: 50, suffix: '%', label: 'schnellere PR-Durchlaufzeit' },
-        { value: 25, suffix: '%', label: 'höherer Freigabedurchsatz' },
-        { value: 0, suffix: '', label: 'Ausfallzeit bei Produktiv-Datenoperationen' },
+        { value: 25, suffix: '%', label: 'höherer PR-Durchsatz' },
+        { value: 0, suffix: '', label: 'Produktionsausfallzeit' },
+        { value: 100, suffix: 'M+', label: 'Nutzer auf den von mir betreuten Systemen' },
       ],
     },
     experience: [

@@ -17,6 +17,7 @@
 
   let ready = $state(false);
   let flipped = $state(false);
+  const lineIndex = Math.floor(Math.random() * hero.cardTexts.length);
 
   const links = $derived(socials.map((social) => ({ ...social, name: social.name ?? ui.email, external: social.key !== 'email' })));
 
@@ -39,18 +40,17 @@
         {#key hero.name}
           <p class="eyebrow" in:fade={{ duration: 800 }}>{hero.location}</p>
           <h1 in:fly={{ y: 40, duration: 900, easing: cubicOut }}>{hero.name}</h1>
-          <p class="role" in:fly={{ y: 30, duration: 900, delay: 150, easing: cubicOut }}>{hero.role}</p>
+          <p class="role" in:fly={{ y: 30, duration: 900, delay: 150, easing: cubicOut }}>{hero.role} · {age}</p>
           <p class="tagline" in:fly={{ y: 20, duration: 900, delay: 300, easing: cubicOut }}>{hero.tagline}</p>
           <p class="summary" in:fade={{ duration: 900, delay: 500 }}>{hero.summary}</p>
           <ul class="facts" in:fade={{ duration: 900, delay: 650 }}>
-            <li><span>{ui.age}</span>{age}</li>
             {#each hero.facts as fact}
               <li><span>{fact.label}</span>{fact.value}</li>
             {/each}
           </ul>
         {/key}
       </div>
-      <div class="portrait" in:fade={{ duration: 1000, delay: 300 }}>
+      <div class="portrait">
         <div
           class="flip"
           class:flipped
@@ -62,18 +62,19 @@
         >
           <div class="inner">
             <div class="face">
-              <Card title={hero.name} kind={hero.role} footer={hero.location} tone="gold" tall>
-                {#snippet art()}<Placeholder label={hero.name} src="/images/me.JPEG" position="50% 0%" />{/snippet}
-                {hero.tagline}
+              <Card title={hero.name} kind={hero.role} footer={hero.location} tone="gold" icon="bean" pt={String(age).split("").join("/")} tall>
+                {#snippet art()}<Placeholder label={hero.name} src="/images/jan-alojz-gacnik.jpg" position="50% 0%" />{/snippet}
+                {hero.cardTexts[lineIndex]}
               </Card>
             </div>
             <div class="face back">
               <Card title={hero.name} kind={ui.contact} footer={hero.location} tone="gold">
+                <div class="back-body">
                 <ul class="abilities">
                   {#each links as link}
                     <li>
                       <a href={link.href} target={link.external ? '_blank' : undefined} rel="noopener" onclick={(event) => event.stopPropagation()}>
-                        <span class="loyalty"><SocialIcon name={link.key} /></span>
+                        <span class="loyalty" class:down={link.key === 'email'}><SocialIcon name={link.key} /></span>
                         <span class="ability">
                           <strong>{link.name}:</strong>
                           <small>{link.handle}</small>
@@ -82,11 +83,13 @@
                     </li>
                   {/each}
                 </ul>
+                <p class="flavor">{hero.flavor}</p>
+                </div>
               </Card>
             </div>
           </div>
         </div>
-        <p class="hint">↻ {flipped ? ui.unflip : ui.flip}</p>
+        <p class="hint" in:fade={{ duration: 800, delay: 2400 }}>↻ {flipped ? ui.unflip : ui.flip}</p>
         <div class="rive"><RiveCanvas src="/rive/hero.riv" /></div>
       </div>
     </div>
@@ -181,6 +184,20 @@
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    animation: enter 2.2s 0.3s backwards;
+  }
+  @keyframes enter {
+    0% {
+      transform: translateX(70vw) rotateZ(-13.6deg) rotateY(0);
+      animation-timing-function: cubic-bezier(0.2, 0.5, 0.2, 1);
+    }
+    80% {
+      transform: translateX(0) rotateZ(-13.6deg) rotateY(1080deg);
+      animation-timing-function: ease-in-out;
+    }
+    100% {
+      transform: translateX(0) rotateZ(0) rotateY(1080deg);
+    }
   }
   .flipped .inner {
     transform: rotateY(180deg);
@@ -198,6 +215,19 @@
     text-align: center;
     font-size: 0.8rem;
     color: var(--accent);
+  }
+  .back-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+  .flavor {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgb(0 0 0 / 0.25);
+    font-style: italic;
+    font-size: 0.8rem;
+    text-align: center;
   }
   .abilities {
     list-style: none;
@@ -230,6 +260,10 @@
     color: #f4efe0;
     clip-path: polygon(50% 0, 100% 22%, 100% 100%, 0 100%, 0 22%);
     padding-top: 0.2rem;
+  }
+  .loyalty.down {
+    clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%);
+    padding: 0 0 0.2rem;
   }
   .loyalty :global(svg) {
     width: 1.1rem;
@@ -347,6 +381,9 @@
     }
   }
   @media (prefers-reduced-motion: reduce) {
+    .inner {
+      animation: none;
+    }
     .label::after,
     .deck i {
       animation: none !important;

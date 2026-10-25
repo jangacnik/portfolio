@@ -8,6 +8,7 @@
     red: ['M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2 1-3.2 2-4.2.2 1.4.8 2 1.6 2.4C10.2 8.8 10.6 5.8 12 3z'],
     green: ['M5 19C5 10 10 5 20 4c0 10-5 15-15 15z', 'M5 19l8-8'],
     gold: ['M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z'],
+    bean: ['M5.64 18.36A9 5.5 -45 0 1 18.36 5.64A9 5.5 -45 0 1 5.64 18.36z', 'M7 17c4-1 3-4 5-5s1-4 5-5'],
     bulb: ['M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z', 'M9.5 19h5M10.5 21.5h3'],
     trophy: ['M8 4h8v6a4 4 0 0 1-8 0z', 'M8 6H5v2a3 3 0 0 0 3 3M16 6h3v2a3 3 0 0 1-3 3', 'M12 14v4M9 20h6M10 18h4'],
     speech: ['M4 5h16v11h-9l-4 4v-4H4z', 'M8 9.5h8M8 12.5h5'],
@@ -35,7 +36,7 @@
     </header>
     {#if art}<div class="art">{@render art()}</div>{/if}
     {#if kind}
-      <div class="bar type"><span>{kind}</span><svg class="set" viewBox="0 0 24 24" aria-hidden="true">{#each icons[icon ?? tone] as d}<path {d} />{/each}</svg></div>
+      <div class="bar type"><span>{kind}</span><svg class="set" class:large={icon === 'bean'} viewBox="0 0 24 24" aria-hidden="true">{#each icons[icon ?? tone] as d}<path {d} />{/each}</svg></div>
     {/if}
     <div class="text">{@render children()}</div>
     {#if date}<span class="date">{date}</span>{/if}
@@ -202,6 +203,10 @@
     font-size: 0.7rem;
     font-weight: 500;
     line-height: 1.2;
+  }
+  .set.large {
+    width: 1.4rem;
+    height: 1.4rem;
   }
   .set {
     flex: none;

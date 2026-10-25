@@ -7,14 +7,16 @@
 
   let { title, items, ui } = $props();
 
+  const asPhoto = (photo) => (typeof photo === 'string' ? { src: photo } : photo);
+
   function cardsOf(job) {
-    const numbered = (kind, tone, icon, texts, photos) =>
-      texts.map(({ title, text }, index) => ({ type: 'text', kind, tone, icon, title, text, photo: photos[index], pt: `${index + 1}/${texts.length}` }));
+    const numbered = (group, kind, tone, icon, texts, photos) =>
+      texts.map(({ title, text }, index) => ({ type: 'text', group, kind, tone, icon, title, text, photo: asPhoto(photos[index]), pt: `${index + 1}/${texts.length}` }));
     return [
-      { type: 'company', job },
-      ...numbered(ui.responsibility, 'blue', 'bulb', job.responsibilities, job.photos.responsibilities),
-      ...numbered(ui.achievement, 'red', 'trophy', job.achievements, job.photos.achievements),
-      { type: 'tech', job },
+      { type: 'company', group: 'company', job },
+      ...numbered('responsibilities', ui.responsibility, 'blue', 'bulb', job.responsibilities, job.photos.responsibilities),
+      ...numbered('achievements', ui.achievement, 'red', 'trophy', job.achievements, job.photos.achievements),
+      { type: 'tech', group: 'tech', job },
     ];
   }
 </script>
@@ -24,7 +26,7 @@
   <Timeline {items}>
     {#snippet entry(job)}
       <h3 class="period">{job.period} · {job.place}</h3>
-      <CardStack items={cardsOf(job)} prev={ui.prev} next={ui.next}>
+      <CardStack items={cardsOf(job)} prev={ui.prev} next={ui.next} groupOf={(item) => item.group}>
         {#snippet card(item)}
           {#if item.type === 'company'}
             <Card title={item.job.company} kind={item.job.role} footer={item.job.place} date={item.job.period} tone="gold">
@@ -33,7 +35,7 @@
             </Card>
           {:else if item.type === 'text'}
             <Card title={item.title} kind={item.kind} pt={item.pt} tone={item.tone} icon={item.icon} footer={`${job.company} · ${item.pt}`}>
-              {#snippet art()}<Placeholder label={item.title} src={item.photo} />{/snippet}
+              {#snippet art()}<Placeholder label={item.title} src={item.photo.src} fit={item.photo.fit} backdrop={item.photo.background} />{/snippet}
               {item.text}
             </Card>
           {:else}

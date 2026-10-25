@@ -1,10 +1,10 @@
 <script>
-  let { label, ratio = null, src = null, position = 'center' } = $props();
+  let { label, ratio = null, src = null, position = 'center', fit = 'cover', backdrop = null } = $props();
 </script>
 
-<div class="frame" style={ratio ? `aspect-ratio:${ratio}` : undefined}>
+<div class="frame" style={ratio ? `aspect-ratio:${ratio}` : undefined} style:background={backdrop}>
   {#if src}
-    <img {src} alt={label} loading="lazy" style="object-position:{position}" />
+    <img {src} alt={label} loading="lazy" style="object-position:{position}; object-fit:{fit}" />
   {:else}
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <rect x="3" y="4" width="18" height="16" rx="2" />

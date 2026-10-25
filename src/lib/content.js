@@ -120,8 +120,8 @@ export const content = {
       { type: 'AI-assisted dev', items: skillItems.ai, photo: skillPhotos.ai, icon: skillIcons.ai },
     ],
     education: [
-      { school: 'University of Maribor', faculty: 'Faculty of Electrical Engineering and Computer Science', degree: "Master's, Computer and Information Technologies", period: 'Oct 2022 – Mar 2025', thesis: 'Business process automation using the Camunda platform', photo: educationPhotos[0] },
-      { school: 'University of Maribor', faculty: 'Faculty of Electrical Engineering and Computer Science', degree: "Bachelor's, Computer and Information Technologies", period: 'Oct 2018 – Sep 2022', thesis: 'Contactless work-hour monitoring system using Raspberry Pi', photo: educationPhotos[1] },
+      { school: 'University of Maribor', faculty: 'Faculty of Electrical Engineering and Computer Science', degree: "Master's Degree, Computer and Information Technologies", period: 'Oct 2022 – Mar 2025', thesis: 'Business process automation using the Camunda platform', photo: educationPhotos[0] },
+      { school: 'University of Maribor', faculty: 'Faculty of Electrical Engineering and Computer Science', degree: "Bachelor's Degree, Computer and Information Technologies", period: 'Oct 2018 – Sep 2022', thesis: 'Contactless work-hour monitoring system using Raspberry Pi', photo: educationPhotos[1] },
     ],
     spoken: [
       { name: 'Slovenian', level: 'Native', pct: 100 },
@@ -200,8 +200,8 @@ export const content = {
       { type: 'Razvoj z UI', items: skillItems.ai, photo: skillPhotos.ai, icon: skillIcons.ai },
     ],
     education: [
-      { school: 'Univerza v Mariboru', faculty: 'Fakulteta za elektrotehniko, računalništvo in informatiko', degree: 'Magisterij, računalništvo in informacijske tehnologije', period: 'okt. 2022 – mar. 2025', thesis: 'Avtomatizacija poslovnih procesov s platformo Camunda', photo: educationPhotos[0] },
-      { school: 'Univerza v Mariboru', faculty: 'Fakulteta za elektrotehniko, računalništvo in informatiko', degree: 'Diploma, računalništvo in informacijske tehnologije', period: 'okt. 2018 – sep. 2022', thesis: 'Brezstični sistem za spremljanje delovnega časa z Raspberry Pi', photo: educationPhotos[1] },
+      { school: 'Univerza v Mariboru', faculty: 'Fakulteta za elektrotehniko, računalništvo in informatiko', degree: 'Magistrski študij, računalništvo in informacijske tehnologije', period: 'okt. 2022 – mar. 2025', thesis: 'Avtomatizacija poslovnih procesov s platformo Camunda', photo: educationPhotos[0] },
+      { school: 'Univerza v Mariboru', faculty: 'Fakulteta za elektrotehniko, računalništvo in informatiko', degree: 'Diplomski študij, računalništvo in informacijske tehnologije', period: 'okt. 2018 – sep. 2022', thesis: 'Brezstični sistem za spremljanje delovnega časa z Raspberry Pi', photo: educationPhotos[1] },
     ],
     spoken: [
       { name: 'Slovenščina', level: 'Materni jezik', pct: 100 },
@@ -280,8 +280,8 @@ export const content = {
       { type: 'KI-gestützte Entwicklung', items: skillItems.ai, photo: skillPhotos.ai, icon: skillIcons.ai },
     ],
     education: [
-      { school: 'Universität Maribor', faculty: 'Fakultät für Elektrotechnik und Informatik', degree: 'Master, Computer- und Informationstechnologien', period: 'Okt. 2022 – März 2025', thesis: 'Geschäftsprozessautomatisierung mit der Camunda-Plattform', photo: educationPhotos[0] },
-      { school: 'Universität Maribor', faculty: 'Fakultät für Elektrotechnik und Informatik', degree: 'Bachelor, Computer- und Informationstechnologien', period: 'Okt. 2018 – Sep. 2022', thesis: 'Kontaktloses Arbeitszeiterfassungssystem mit Raspberry Pi', photo: educationPhotos[1] },
+      { school: 'Universität Maribor', faculty: 'Fakultät für Elektrotechnik und Informatik', degree: 'Masterabschluss, Computer- und Informationstechnologien', period: 'Okt. 2022 – März 2025', thesis: 'Geschäftsprozessautomatisierung mit der Camunda-Plattform', photo: educationPhotos[0] },
+      { school: 'Universität Maribor', faculty: 'Fakultät für Elektrotechnik und Informatik', degree: 'Bachelorabschluss, Computer- und Informationstechnologien', period: 'Okt. 2018 – Sep. 2022', thesis: 'Kontaktloses Arbeitszeiterfassungssystem mit Raspberry Pi', photo: educationPhotos[1] },
     ],
     spoken: [
       { name: 'Slowenisch', level: 'Muttersprache', pct: 100 },

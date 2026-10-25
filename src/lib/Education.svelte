@@ -19,7 +19,7 @@
         <div class="pile">
           {#each items as school, index}
             <div class="slot" style="--z:{items.length - index}">
-              <Card title={school.school} kind={splitDegree(school.degree).level} footer={school.faculty} date={school.period} tone="white" bleed={index > 0}>
+              <Card title={school.school} kind={splitDegree(school.degree).level} footer={school.faculty} date={school.period} tone="white">
                 {#snippet art()}<Placeholder label={school.school} src={school.photo} position="50% 20%" />{/snippet}
                 <p class="program">{splitDegree(school.degree).program}</p>
                 <p class="thesis">{school.thesis}</p>
@@ -57,7 +57,7 @@
   }
   .slot + .slot {
     margin-top: calc(var(--height) / -2);
-    margin-left: 5rem;
+    margin-left: 3rem;
   }
   .slot:hover {
     z-index: 100;

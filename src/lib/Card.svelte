@@ -1,5 +1,5 @@
 <script>
-  let { title, badge = null, kind = null, footer = null, date = null, pt = null, tone = 'white', tall = false, bleed = false, icon = null, pips = 0, art = null, children } = $props();
+  let { title, badge = null, kind = null, footer = null, date = null, pt = null, tone = 'white', tall = false, icon = null, pips = 0, art = null, children } = $props();
 
   const icons = {
     white: ['M8 12a4 4 0 1 0 8 0 4 4 0 1 0-8 0', 'M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1'],
@@ -18,7 +18,7 @@
   };
 </script>
 
-<article class="card {tone}" class:tall class:bleed>
+<article class="card {tone}" class:tall>
   <div class="frame">
     <header class="bar name">
       <h3>{title}</h3>
@@ -135,7 +135,7 @@
     gap: 0.4rem;
     min-height: 1.7rem;
     padding: 0.1rem 0.5rem;
-    border-radius: 0.5rem / 0.7rem;
+    border-radius: 0.17rem / 0.24rem;
     background: linear-gradient(to bottom, var(--paper), color-mix(in srgb, var(--paper) 80%, var(--frame)));
     box-shadow: 0 0 0 1px var(--frame-dark);
   }
@@ -151,7 +151,7 @@
   .mana {
     flex: none;
     display: flex;
-    gap: 0.15rem;
+    gap: 0.3rem;
   }
   .pip {
     display: grid;
@@ -159,13 +159,14 @@
     width: 1.2rem;
     height: 1.2rem;
     border-radius: 50%;
-    box-shadow: 0 0 0 1px #1b1612;
+    box-shadow: 0 0 0 1px #1b1612, -1px 2px 2px rgb(0 0 0 / 0.45);
     color: #111;
-    font-size: 0.7rem;
+    font-size: 0.783rem;
     font-weight: 700;
     line-height: 1;
   }
   .generic {
+    padding-top: 0.2rem;
     background: #cdc7bd;
   }
   .colored {
@@ -195,10 +196,6 @@
   }
   .tall .text {
     flex: none;
-  }
-  .bleed .art {
-    margin-inline: -0.4rem;
-    border-inline-width: 0;
   }
   .type {
     border-radius: 0.33rem / 0.47rem;

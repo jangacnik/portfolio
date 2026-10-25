@@ -3,7 +3,6 @@
   import { Tween } from 'svelte/motion';
   import { cubicOut } from 'svelte/easing';
   import { onMount } from 'svelte';
-  import RiveCanvas from './RiveCanvas.svelte';
   import Placeholder from './Placeholder.svelte';
   import Card from './Card.svelte';
 
@@ -90,7 +89,6 @@
           </div>
         </div>
         <p class="hint" in:fade={{ duration: 800, delay: 2400 }}>↻ {flipped ? ui.unflip : ui.flip}</p>
-        <div class="rive"><RiveCanvas src="/rive/hero.riv" /></div>
       </div>
     </div>
     <dl class="stats">
@@ -277,11 +275,6 @@
   .ability small {
     font-size: 0.75rem;
     overflow-wrap: anywhere;
-  }
-  .rive {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
   }
   .stats {
     display: grid;

@@ -54,7 +54,7 @@ const skillItems = {
 
 export const content = {
   en: {
-    ui: { experience: 'Experience', skills: 'Skills', education: 'Education', languages: 'Languages', contact: 'Contact', scroll: 'Scroll to draw', present: 'Present', lead: 'Tech Lead', email: 'Email', responsibility: 'Responsibility', achievement: 'Achievement', stack: 'Tech Stack', prev: 'Previous', next: 'Next', flip: 'Flip card for socials', unflip: 'Flip back', updated: 'Last updated' },
+    ui: { experience: 'Experience', skills: 'Skills', education: 'Education', languages: 'Languages', contact: 'Contact', scroll: 'Scroll to draw', email: 'Email', responsibility: 'Responsibility', achievement: 'Achievement', stack: 'Tech Stack', prev: 'Previous', next: 'Next', flip: 'Flip card for socials', unflip: 'Flip back', updated: 'Last updated' },
     hero: {
       name: 'Jan Alojz Gačnik',
       role: 'Backend Software Engineer',
@@ -142,7 +142,7 @@ export const content = {
   },
 
   sl: {
-    ui: { experience: 'Izkušnje', skills: 'Znanja', education: 'Izobrazba', languages: 'Jeziki', contact: 'Kontakt', scroll: 'Povleci za naprej', present: 'Danes', lead: 'Tehnični vodja', email: 'E-pošta', responsibility: 'Odgovornost', achievement: 'Dosežek', stack: 'Tehnologije', prev: 'Nazaj', next: 'Naprej', flip: 'Obrni kartico za omrežja', unflip: 'Obrni nazaj', updated: 'Nazadnje posodobljeno' },
+    ui: { experience: 'Izkušnje', skills: 'Znanja', education: 'Izobrazba', languages: 'Jeziki', contact: 'Kontakt', scroll: 'Povleci za naprej', email: 'E-pošta', responsibility: 'Odgovornost', achievement: 'Dosežek', stack: 'Tehnologije', prev: 'Nazaj', next: 'Naprej', flip: 'Obrni kartico za omrežja', unflip: 'Obrni nazaj', updated: 'Nazadnje posodobljeno' },
     hero: {
       name: 'Jan Alojz Gačnik',
       role: 'Backend programski inženir',
@@ -230,7 +230,7 @@ export const content = {
   },
 
   de: {
-    ui: { experience: 'Erfahrung', skills: 'Fähigkeiten', education: 'Ausbildung', languages: 'Sprachen', contact: 'Kontakt', scroll: 'Scrollen zum Ziehen', present: 'Heute', lead: 'Tech Lead', email: 'E-Mail', responsibility: 'Aufgabe', achievement: 'Erfolg', stack: 'Tech-Stack', prev: 'Zurück', next: 'Weiter', flip: 'Karte drehen für Social Links', unflip: 'Zurückdrehen', updated: 'Zuletzt aktualisiert' },
+    ui: { experience: 'Erfahrung', skills: 'Fähigkeiten', education: 'Ausbildung', languages: 'Sprachen', contact: 'Kontakt', scroll: 'Scrollen zum Ziehen', email: 'E-Mail', responsibility: 'Aufgabe', achievement: 'Erfolg', stack: 'Tech-Stack', prev: 'Zurück', next: 'Weiter', flip: 'Karte drehen für Social Links', unflip: 'Zurückdrehen', updated: 'Zuletzt aktualisiert' },
     hero: {
       name: 'Jan Alojz Gačnik',
       role: 'Backend Software Engineer',
@@ -329,3 +329,73 @@ export const socials = [
 export const birthDate = new Date(1999, 0, 20);
 
 export const lastUpdated = new Date(2026, 9, 1);
+
+
+const magicText = {
+  "Core backend of a globally distributed platform with high-throughput, low-latency requirements.": "Haste, flash. Core backend of a globally distributed platform: high throughput, low latency.",
+  "Took on tech-lead responsibilities to support the team and tech lead in a 3-engineer Agile team: planning, design decisions, and main contact for clients, QA and DevOps.": "Each sprint, plan the work and make design decisions. Main contact for clients, QA and DevOps. Supports your tech lead and a 3-engineer team.",
+  "Handle project-management tasks: scheduling releases, running the release process, managing tasks and helping manage the team day to day.": "At the beginning of each release, schedule it and run the release process. Manage tasks and help manage the team day to day.",
+  "Built backend services for high-throughput user data operations in Kotlin and Scala, focused on reliability and low latency.": "Build backend services in Kotlin and Scala for high-throughput user data operations. Reliability. Low latency.",
+  "Proposed new projects to architecture leadership, owned the design and drove adoption across teams.": "When you propose a new project to architecture leadership, you own its design. Drive its adoption across teams.",
+  "Solved data consistency and concurrency challenges in a globally distributed platform.": "Whenever data consistency or concurrency becomes a problem in a globally distributed platform, solve it.",
+  "Contributed to a major backend migration to a functional Scala (ZIO) architecture.": "Contribute to the major backend migration to a functional Scala (ZIO) architecture.",
+  "Introduced Claude Code agents, hooks and multi-agent workflows to the team, cutting PR turnaround by up to 50%.": "When you introduce Claude Code agents, hooks and multi-agent workflows to the team, PR turnaround is cut by up to 50%.",
+  "Planned and executed large-scale production data operations under tight deadlines with zero downtime and no data loss.": "Indestructible. Large-scale production data operations under tight deadlines cause zero downtime and no data loss.",
+  "Credit processing platform for the European financial sector, handling high volumes of requests and documents.": "Credit processing platform for the European financial sector. Whenever a request or document enters, process it. Handles high volumes.",
+  "Developed Spring Boot microservices for automated credit workflows in an 8-person Agile team.": "Whenever a credit workflow needs automating, create a Spring Boot microservice. Fights alongside an 8-person Agile team.",
+  "Designed and optimized BPMN / Activiti business processes with business analysts.": "At the beginning of each design phase, design and optimize a BPMN / Activiti business process. Teamwork with business analysts.",
+  "Contributed to an OCR document pipeline with 90%+ accuracy and data normalization that improved automated validation.": "OCR document pipeline: 90%+ accuracy. Whenever data is normalized, automated validation improves.",
+  "Mentored and onboarded 2 junior developers in Java, Spring Boot and BPM.": "When 2 junior developers enter the battlefield, onboard and mentor them in Java, Spring Boot and BPM. They get +1/+1 counters.",
+  "Raised credit approval throughput by 25% through parallel processing and automation, reducing manual review.": "Parallel processing. Automation. Credit approval throughput gets +25%. Manual review is reduced.",
+  "Cut Angular latency by ~500 ms and API calls by 30%.": "Flash. Angular latency gets −500 ms and API calls get −30%."
+};
+
+const magicize = (text) => magicText[text] ?? text;
+
+const mtgThesis = [
+  '“Business process automation using the Camunda platform.” — Thesis',
+  '“Contactless work-hour monitoring system using Raspberry Pi.” — Thesis',
+];
+
+const mtgStatLabels = [
+  'Experience counters: fintech & scale',
+  'Faster PR turnaround. Haste.',
+  'Higher PR throughput. Trample.',
+  'Production downtime. Hexproof.',
+  'Users on the systems I manage',
+];
+
+export const mtgContent = {
+  ...content.en,
+  ui: {
+    ...content.en.ui,
+    experience: 'Battlefield',
+    skills: 'Spellbook',
+    education: 'Library',
+    flip: 'Transform this card for socials',
+    unflip: 'Transform back',
+    responsibility: 'Ability',
+  },
+  hero: {
+    ...content.en.hero,
+    tagline: 'Distributed systems gain haste, consistency and hexproof from downtime.',
+    summary:
+      'Backend engineer with 5+ years in fintech and large-scale consumer platforms. When this engineer enters the battlefield at Rakuten, a globally distributed backend gains reliability and a small team gains support. Strong in Kotlin, Scala and Java. Deep experience in data consistency, concurrency and microservice architecture. Early adopter of AI-assisted development: Claude Code agents and multi-agent workflows.',
+    facts: [
+      { label: 'Nationality', value: 'Slovenian' },
+      { label: 'Visa (Japan)', value: 'Spouse of a Japanese national. Sponsorship cost: {0}.' },
+    ],
+    stats: content.en.hero.stats.map((stat, index) => ({ ...stat, label: mtgStatLabels[index] })),
+  },
+  experience: content.en.experience.map((job) => ({
+    ...job,
+    blurb: magicize(job.blurb),
+    responsibilities: job.responsibilities.map((item) => ({ ...item, text: magicize(item.text) })),
+    achievements: job.achievements.map((item) => ({ ...item, text: magicize(item.text) })),
+  })),
+  education: content.en.education.map((school, index) => ({ ...school, thesis: mtgThesis[index] })),
+  contact: {
+    heading: 'Let’s build something. Cast it.',
+    note: 'Based in Japan. Spouse of a Japanese national. No sponsorship required: cost {0}.',
+  },
+};

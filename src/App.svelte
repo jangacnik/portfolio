@@ -1,5 +1,5 @@
 <script>
-  import { content, email, socials, lastUpdated } from './lib/content.js';
+  import { content, mtgContent, email, socials, lastUpdated } from './lib/content.js';
   import SocialIcon from './lib/SocialIcon.svelte';
   import { lang, applyLang, englishOnly } from './lib/lang.svelte.js';
   import LangSwitch from './lib/LangSwitch.svelte';
@@ -9,10 +9,12 @@
   import Education from './lib/Education.svelte';
   import Reveal from './lib/Reveal.svelte';
 
-  const text = $derived(content[lang.code]);
+  const isMtg = location.pathname.replace(/\/+$/, '') === '/mtg';
+  const text = $derived(isMtg ? mtgContent : content[lang.code]);
   const updated = $derived(new Intl.DateTimeFormat(lang.code, { month: 'long', year: 'numeric' }).format(lastUpdated));
 
   $effect(applyLang);
+  if (isMtg) document.title = 'Backend Engineer — Jan Gačnik · MTG edition';
 </script>
 
 {#if !englishOnly}
@@ -62,7 +64,10 @@
   </section>
 </main>
 
-<footer class="updated">{text.ui.updated}: {updated}</footer>
+<footer class="updated">
+  {text.ui.updated}: {updated} ·
+  {#if isMtg}<a href="/">Standard edition</a>{:else}<a href="/mtg">MTG edition</a>{/if}
+</footer>
 
 <style>
   .bars {
@@ -139,6 +144,9 @@
   }
   .mail:hover {
     text-decoration: underline;
+  }
+  .updated a {
+    color: inherit;
   }
   .updated {
     padding: 1.5rem 1.25rem 2rem;

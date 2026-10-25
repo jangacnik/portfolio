@@ -2,7 +2,10 @@ import { content } from './content.js';
 
 const STORAGE_KEY = 'lang';
 
+export const englishOnly = true;
+
 function detect() {
+  if (englishOnly) return 'en';
   const saved = localStorage.getItem(STORAGE_KEY);
   if (saved in content) return saved;
   const browser = navigator.language.slice(0, 2);

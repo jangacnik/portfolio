@@ -1,7 +1,7 @@
 <script>
   import { content, email, socials, lastUpdated } from './lib/content.js';
   import SocialIcon from './lib/SocialIcon.svelte';
-  import { lang, applyLang } from './lib/lang.svelte.js';
+  import { lang, applyLang, englishOnly } from './lib/lang.svelte.js';
   import LangSwitch from './lib/LangSwitch.svelte';
   import Hero from './lib/Hero.svelte';
   import Experience from './lib/Experience.svelte';
@@ -15,7 +15,9 @@
   $effect(applyLang);
 </script>
 
-<LangSwitch />
+{#if !englishOnly}
+  <LangSwitch />
+{/if}
 
 <main>
   <Hero hero={text.hero} scrollLabel={text.ui.scroll} ui={text.ui} />

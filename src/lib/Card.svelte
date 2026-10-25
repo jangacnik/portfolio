@@ -51,6 +51,8 @@
     position: relative;
     width: 100%;
     aspect-ratio: 63 / 88;
+    display: flex;
+    flex-direction: column;
     container-type: inline-size;
     padding: 0.5rem 0.5rem 1.15rem;
     border-radius: 1rem;
@@ -121,7 +123,8 @@
   }
   .frame {
     position: relative;
-    height: 100%;
+    flex: 1;
+    min-height: 0;
     display: flex;
     flex-direction: column;
     gap: 0.3rem;

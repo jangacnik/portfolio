@@ -1,5 +1,6 @@
 <script>
-  import { content, email } from './lib/content.js';
+  import { content, email, socials } from './lib/content.js';
+  import SocialIcon from './lib/SocialIcon.svelte';
   import { lang, applyLang } from './lib/lang.svelte.js';
   import LangSwitch from './lib/LangSwitch.svelte';
   import Hero from './lib/Hero.svelte';
@@ -16,29 +17,41 @@
 <LangSwitch />
 
 <main>
-  <Hero hero={text.hero} scrollLabel={text.ui.scroll} />
-  <Experience title={text.ui.experience} items={text.experience} />
-  <Skills title={text.ui.skills} groups={text.skills} />
-  <Education title={text.ui.education} items={text.education} />
-
-  <section id="languages">
-    <Reveal><h2>{text.ui.languages}</h2></Reveal>
-    <div class="bars">
-      {#each text.spoken as entry, index (entry.name)}
-        <Reveal delay={index * 100}>
-          <div class="bar">
-            <div class="label"><strong>{entry.name}</strong><span>{entry.level}</span></div>
-            <div class="track"><div class="fill" style="--w:{entry.pct}%"></div></div>
-          </div>
-        </Reveal>
-      {/each}
-    </div>
-  </section>
+  <Hero hero={text.hero} scrollLabel={text.ui.scroll} ui={text.ui} />
+  <Experience title={text.ui.experience} items={text.experience} ui={text.ui} />
+  <Skills title={text.ui.skills} groups={text.skills} ui={text.ui} />
+  <Education title={text.ui.education} items={text.education}>
+    {#snippet aside()}
+      <div id="languages">
+        <Reveal><h2>{text.ui.languages}</h2></Reveal>
+        <div class="bars">
+          {#each text.spoken as entry, index (entry.name)}
+            <Reveal delay={index * 100}>
+              <div class="bar">
+                <div class="label"><strong>{entry.name}</strong><span>{entry.level}</span></div>
+                <div class="track"><div class="fill" style="--w:{entry.pct}%"></div></div>
+              </div>
+            </Reveal>
+          {/each}
+        </div>
+      </div>
+    {/snippet}
+  </Education>
 
   <section id="contact">
     <Reveal>
       <div class="cta">
         <h2>{text.contact.heading}</h2>
+        <ul class="socials">
+          {#each socials as social}
+            <li>
+              <a href={social.href} target={social.key === 'email' ? undefined : '_blank'} rel="noopener">
+                <SocialIcon name={social.key} />
+                {social.name ?? text.ui.email}
+              </a>
+            </li>
+          {/each}
+        </ul>
         <a class="mail" href="mailto:{email}">{email}</a>
         <p class="note">{text.contact.note}</p>
       </div>
@@ -89,16 +102,38 @@
   .cta :global(h2::after) {
     margin-inline: auto;
   }
-  .mail {
-    display: inline-block;
-    font-size: clamp(1.2rem, 4vw, 1.8rem);
+  .socials {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  .socials a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.1rem;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
     color: var(--accent);
     text-decoration: none;
-    border-bottom: 1px solid var(--accent);
-    transition: opacity 0.3s;
+    transition: background 0.3s, color 0.3s;
+  }
+  .socials a:hover {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  .mail {
+    display: inline-block;
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-decoration: none;
   }
   .mail:hover {
-    opacity: 0.7;
+    text-decoration: underline;
   }
   .note {
     margin-top: 1.5rem;

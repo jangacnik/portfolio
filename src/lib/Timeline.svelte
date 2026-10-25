@@ -1,10 +1,10 @@
 <script>
   import Reveal from './Reveal.svelte';
 
-  let { items, entry } = $props();
+  let { items, entry, gap = '3rem' } = $props();
 </script>
 
-<ol>
+<ol style="gap:{gap}">
   {#each items as item, index}
     <li>
       <Reveal delay={index * 100}>
@@ -20,7 +20,6 @@
     padding: 0;
     position: relative;
     display: grid;
-    gap: 3rem;
   }
   ol::before {
     content: '';
@@ -33,6 +32,7 @@
   }
   li {
     position: relative;
+    min-width: 0;
     padding-left: 2.25rem;
   }
   li::before {

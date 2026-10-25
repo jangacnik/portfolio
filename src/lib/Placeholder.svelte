@@ -1,10 +1,10 @@
 <script>
-  let { label, ratio = '1 / 1', src = null } = $props();
+  let { label, ratio = null, src = null, position = 'center' } = $props();
 </script>
 
-<div class="frame" style="aspect-ratio:{ratio}">
+<div class="frame" style={ratio ? `aspect-ratio:${ratio}` : undefined}>
   {#if src}
-    <img {src} alt={label} loading="lazy" />
+    <img {src} alt={label} loading="lazy" style="object-position:{position}" />
   {:else}
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <rect x="3" y="4" width="18" height="16" rx="2" />
@@ -22,8 +22,8 @@
     justify-items: center;
     gap: 0.4rem;
     width: 100%;
+    height: 100%;
     overflow: hidden;
-    border-radius: 0.75rem;
     border: 1px dashed rgb(var(--glow) / 0.35);
     background: repeating-linear-gradient(135deg, transparent 0 10px, rgb(var(--glow) / 0.05) 10px 11px);
     color: var(--muted);

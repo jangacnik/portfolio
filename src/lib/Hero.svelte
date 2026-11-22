@@ -24,7 +24,8 @@
 
   const counters = $derived(hero.stats.map(() => new Tween(0, { duration: 1800, easing: cubicOut })));
   const visitorCounter = new Tween(0, { duration: 1800, easing: cubicOut });
-  const hasVisitorCount = $derived(Number.isFinite(visitors.count));
+  const MIN_VISITORS_SHOWN = 100;
+  const hasVisitorCount = $derived(Number.isFinite(visitors.count) && visitors.count > MIN_VISITORS_SHOWN);
 
   onMount(() => {
     ready = true;

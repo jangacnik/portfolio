@@ -8,6 +8,7 @@
   import Skills from './lib/Skills.svelte';
   import Education from './lib/Education.svelte';
   import Reveal from './lib/Reveal.svelte';
+  import VisitorCount from './lib/VisitorCount.svelte';
 
   const isMtg = location.pathname.replace(/\/+$/, '') === '/mtg';
   const text = $derived(isMtg ? mtgContent : content[lang.code]);
@@ -67,6 +68,7 @@
 <footer class="updated">
   {text.ui.updated}: {updated} ·
   {#if isMtg}<a href="/">Standard edition</a>{:else}<a href="/mtg">MTG edition</a>{/if}
+  <VisitorCount label={text.ui.visitors} />
 </footer>
 
 <style>

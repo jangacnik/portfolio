@@ -8,6 +8,8 @@
 
   import { socials, birthDate } from './content.js';
   import SocialIcon from './SocialIcon.svelte';
+  import D20Icon from './D20Icon.svelte';
+  import { visitors } from './visitors.svelte.js';
 
   let { hero, scrollLabel, ui } = $props();
   const today = new Date();
@@ -21,6 +23,8 @@
   const links = $derived(socials.map((social) => ({ ...social, name: social.name ?? ui.email, external: social.key !== 'email' })));
 
   const counters = $derived(hero.stats.map(() => new Tween(0, { duration: 1800, easing: cubicOut })));
+  const visitorCounter = new Tween(0, { duration: 1800, easing: cubicOut });
+  const hasVisitorCount = $derived(Number.isFinite(visitors.count));
 
   onMount(() => {
     ready = true;
@@ -29,6 +33,10 @@
   $effect(() => {
     if (!ready) return;
     hero.stats.forEach((stat, index) => (counters[index].target = stat.value));
+  });
+
+  $effect(() => {
+    if (ready && hasVisitorCount) visitorCounter.target = visitors.count;
   });
 </script>
 
@@ -98,6 +106,12 @@
           <dd>{stat.label}</dd>
         </div>
       {/each}
+      {#if hasVisitorCount}
+        <div class="visitors" in:fly={{ y: 20, duration: 700, delay: 500 + hero.stats.length * 120, easing: cubicOut }}>
+          <dt><span class="die"><D20Icon /></span>{new Intl.NumberFormat().format(Math.round(visitorCounter.current))}</dt>
+          <dd>{ui.uniqueVisitors}</dd>
+        </div>
+      {/if}
     </dl>
   {/if}
   <a class="scroll" href="#experience">
@@ -278,7 +292,7 @@
   }
   .stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
     gap: 1.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid rgb(var(--glow) / 0.2);
@@ -293,6 +307,23 @@
     margin: 0;
     font-size: 0.85rem;
     color: var(--muted);
+  }
+  .visitors dt {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+  .die {
+    display: inline-flex;
+    font-size: 1.9rem;
+    color: var(--accent-2);
+    animation: roll 1.8s 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+  @keyframes roll {
+    from {
+      transform: rotate(-540deg) scale(0.4);
+      opacity: 0;
+    }
   }
   .scroll {
     align-self: center;
@@ -380,7 +411,8 @@
       animation: none;
     }
     .label::after,
-    .deck i {
+    .deck i,
+    .die {
       animation: none !important;
     }
   }

@@ -54,7 +54,7 @@ const skillItems = {
 
 export const content = {
   en: {
-    ui: { experience: 'Experience', skills: 'Skills', education: 'Education', languages: 'Languages', contact: 'Contact', scroll: 'Scroll to draw', email: 'Email', responsibility: 'Responsibility', achievement: 'Achievement', stack: 'Tech Stack', prev: 'Previous', next: 'Next', flip: 'Flip card for socials', unflip: 'Flip back', updated: 'Last updated', visitors: 'visitors' },
+    ui: { experience: 'Experience', skills: 'Skills', education: 'Education', languages: 'Languages', contact: 'Contact', scroll: 'Scroll to draw', email: 'Email', responsibility: 'Responsibility', achievement: 'Achievement', stack: 'Tech Stack', prev: 'Previous', next: 'Next', flip: 'Flip card for socials', unflip: 'Flip back', updated: 'Last updated', visitors: 'visitors', uniqueVisitors: 'Unique visitors', visitorSource: 'counted by self-hosted Umami' },
     hero: {
       name: 'Jan Alojz Gačnik',
       role: 'Backend Software Engineer',
@@ -142,7 +142,7 @@ export const content = {
   },
 
   sl: {
-    ui: { experience: 'Izkušnje', skills: 'Znanja', education: 'Izobrazba', languages: 'Jeziki', contact: 'Kontakt', scroll: 'Povleci za naprej', email: 'E-pošta', responsibility: 'Odgovornost', achievement: 'Dosežek', stack: 'Tehnologije', prev: 'Nazaj', next: 'Naprej', flip: 'Obrni kartico za omrežja', unflip: 'Obrni nazaj', updated: 'Nazadnje posodobljeno', visitors: 'obiskovalcev' },
+    ui: { experience: 'Izkušnje', skills: 'Znanja', education: 'Izobrazba', languages: 'Jeziki', contact: 'Kontakt', scroll: 'Povleci za naprej', email: 'E-pošta', responsibility: 'Odgovornost', achievement: 'Dosežek', stack: 'Tehnologije', prev: 'Nazaj', next: 'Naprej', flip: 'Obrni kartico za omrežja', unflip: 'Obrni nazaj', updated: 'Nazadnje posodobljeno', visitors: 'obiskovalcev', uniqueVisitors: 'Edinstvenih obiskovalcev', visitorSource: 'šteje samogostovani Umami' },
     hero: {
       name: 'Jan Alojz Gačnik',
       role: 'Backend programski inženir',
@@ -230,7 +230,7 @@ export const content = {
   },
 
   de: {
-    ui: { experience: 'Erfahrung', skills: 'Fähigkeiten', education: 'Ausbildung', languages: 'Sprachen', contact: 'Kontakt', scroll: 'Scrollen zum Ziehen', email: 'E-Mail', responsibility: 'Aufgabe', achievement: 'Erfolg', stack: 'Tech-Stack', prev: 'Zurück', next: 'Weiter', flip: 'Karte drehen für Social Links', unflip: 'Zurückdrehen', updated: 'Zuletzt aktualisiert', visitors: 'Besucher' },
+    ui: { experience: 'Erfahrung', skills: 'Fähigkeiten', education: 'Ausbildung', languages: 'Sprachen', contact: 'Kontakt', scroll: 'Scrollen zum Ziehen', email: 'E-Mail', responsibility: 'Aufgabe', achievement: 'Erfolg', stack: 'Tech-Stack', prev: 'Zurück', next: 'Weiter', flip: 'Karte drehen für Social Links', unflip: 'Zurückdrehen', updated: 'Zuletzt aktualisiert', visitors: 'Besucher', uniqueVisitors: 'Eindeutige Besucher', visitorSource: 'gezählt mit selbst gehostetem Umami' },
     hero: {
       name: 'Jan Alojz Gačnik',
       role: 'Backend Software Engineer',

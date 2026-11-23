@@ -24,8 +24,6 @@
 
   const counters = $derived(hero.stats.map(() => new Tween(0, { duration: 1800, easing: cubicOut })));
   const visitorCounter = new Tween(0, { duration: 1800, easing: cubicOut });
-  const MIN_VISITORS_SHOWN = 100;
-  const hasVisitorCount = $derived(Number.isFinite(visitors.count) && visitors.count > MIN_VISITORS_SHOWN);
 
   onMount(() => {
     ready = true;
@@ -37,7 +35,7 @@
   });
 
   $effect(() => {
-    if (ready && hasVisitorCount) visitorCounter.target = visitors.count;
+    if (ready && Number.isFinite(visitors.count)) visitorCounter.target = visitors.count;
   });
 </script>
 
@@ -107,12 +105,10 @@
           <dd>{stat.label}</dd>
         </div>
       {/each}
-      {#if hasVisitorCount}
-        <div class="visitors" in:fly={{ y: 20, duration: 700, delay: 500 + hero.stats.length * 120, easing: cubicOut }}>
-          <dt><span class="die"><D20Icon /></span>{new Intl.NumberFormat().format(Math.round(visitorCounter.current))}</dt>
-          <dd>{ui.uniqueVisitors}</dd>
-        </div>
-      {/if}
+      <div class="visitors" in:fly={{ y: 20, duration: 700, delay: 500 + hero.stats.length * 120, easing: cubicOut }}>
+        <dt><span class="die"><D20Icon /></span>{new Intl.NumberFormat().format(Math.round(visitorCounter.current))}</dt>
+        <dd>{ui.uniqueVisitors}</dd>
+      </div>
     </dl>
   {/if}
   <a class="scroll" href="#experience">

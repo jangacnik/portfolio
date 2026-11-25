@@ -10,12 +10,7 @@
 </script>
 
 <svg viewBox="0 0 24 24" aria-hidden="true">
-  {#if name === 'email'}
-    <rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2" />
-    <path d="m22 7-10 6L2 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-  {:else}
-    <path d={paths[name]} fill="currentColor" />
-  {/if}
+  <path d={paths[name]} fill="currentColor" />
 </svg>
 
 <style>

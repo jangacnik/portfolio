@@ -1,5 +1,5 @@
 <script>
-  import { content, mtgContent, email, socials, lastUpdated } from './lib/content.js';
+  import { content, mtgContent, socials, lastUpdated } from './lib/content.js';
   import SocialIcon from './lib/SocialIcon.svelte';
   import { lang, applyLang, englishOnly } from './lib/lang.svelte.js';
   import LangSwitch from './lib/LangSwitch.svelte';
@@ -51,14 +51,13 @@
         <ul class="socials">
           {#each socials as social}
             <li>
-              <a href={social.href} target={social.key === 'email' ? undefined : '_blank'} rel="noopener">
+              <a href={social.href} target="_blank" rel="noopener">
                 <SocialIcon name={social.key} />
-                {social.name ?? text.ui.email}
+                {social.name}
               </a>
             </li>
           {/each}
         </ul>
-        <a class="mail" href="mailto:{email}">{email}</a>
         <p class="note">{text.contact.note}</p>
       </div>
     </Reveal>
@@ -136,16 +135,6 @@
   .socials a:hover {
     background: var(--accent);
     color: var(--bg);
-  }
-  .mail {
-    display: inline-block;
-    margin-top: 1.25rem;
-    font-size: 0.85rem;
-    color: var(--muted);
-    text-decoration: none;
-  }
-  .mail:hover {
-    text-decoration: underline;
   }
   .updated a {
     color: inherit;

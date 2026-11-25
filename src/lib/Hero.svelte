@@ -20,7 +20,6 @@
   let flipped = $state(false);
   const lineIndex = Math.floor(Math.random() * hero.cardTexts.length);
 
-  const links = $derived(socials.map((social) => ({ ...social, name: social.name ?? ui.email, external: social.key !== 'email' })));
 
   const counters = $derived(hero.stats.map(() => new Tween(0, { duration: 1800, easing: cubicOut })));
   const visitorCounter = new Tween(0, { duration: 1800, easing: cubicOut });
@@ -77,10 +76,10 @@
               <Card title={hero.name} kind={ui.contact} footer={hero.location} tone="gold">
                 <div class="back-body">
                 <ul class="abilities">
-                  {#each links as link}
+                  {#each socials as link}
                     <li>
-                      <a href={link.href} target={link.external ? '_blank' : undefined} rel="noopener" onclick={(event) => event.stopPropagation()}>
-                        <span class="loyalty" class:down={link.key === 'email'}><SocialIcon name={link.key} /></span>
+                      <a href={link.href} target="_blank" rel="noopener" onclick={(event) => event.stopPropagation()}>
+                        <span class="loyalty"><SocialIcon name={link.key} /></span>
                         <span class="ability">
                           <strong>{link.name}:</strong>
                           <small>{link.handle}</small>
@@ -269,10 +268,6 @@
     color: #f4efe0;
     clip-path: polygon(50% 0, 100% 22%, 100% 100%, 0 100%, 0 22%);
     padding-top: 0.2rem;
-  }
-  .loyalty.down {
-    clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%);
-    padding: 0 0 0.2rem;
   }
   .loyalty :global(svg) {
     width: 1.1rem;
